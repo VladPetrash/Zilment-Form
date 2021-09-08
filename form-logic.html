@@ -29,8 +29,6 @@ if (document.querySelector('input[name="pricing-model"]')) {
 	var markup_3 = 0.1;
 	var coef = 0.1;
 	var markup_value = markup_1 + coef;
-	if(document.getElementById('interchange-plus').checked) {
-
        		if (card_volume < x) {
        			document.querySelector('.markup-text').textContent = markup_1 + "%";
        			document.querySelector('.amex').textContent = markup_value.toFixed(1) + "%";          
@@ -47,6 +45,10 @@ if (document.querySelector('input[name="pricing-model"]')) {
        			return false;
         		}
        };
+		if(document.getElementById('flat-rate, tiered, cash-discount-surcharge').checked) {
+			document.querySelector('.markup-text').textContent = "N/A";
+          		document.querySelector('.amex').textContent = "N/A";
+       			return false;
     });
   });
  }
