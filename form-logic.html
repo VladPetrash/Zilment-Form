@@ -16,7 +16,6 @@ if (document.querySelector('input[name="pricing-model"]')) {
 };
 
 //Interchange Markup - get value
-if(document.getElementById('interchange-plus').checked) {
 	if (document.querySelector('#field-third')) {
         document.querySelectorAll('#field-third').forEach((card_vol) => {
         card_vol.addEventListener("change", function(event) {
@@ -31,6 +30,7 @@ if(document.getElementById('interchange-plus').checked) {
 	var coef = 0.1;
 	var markup_value = markup_1 + coef;
 	var markup_val = markup_value.toFixed(1)
+	if(document.getElementById('interchange-plus').checked) {
        		if (card_volume < x) {
        			document.querySelector('.markup-text').textContent = markup_1 + "%";
        			document.querySelector('.amex').textContent = markup_value.toFixed(1) + "%";          
@@ -46,10 +46,10 @@ if(document.getElementById('interchange-plus').checked) {
           		document.querySelector('.amex').textContent = markup_3 + coef + "%";
        			return false;
         		}
-       });
+       }); }
   });
  }
-}
+
 </script>
 </body>
 </html>
