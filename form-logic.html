@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body>
+	
+<script>
+//pricing-model
+if (document.querySelector('input[name="pricing-model"]')) {
+  document.querySelectorAll('input[name="pricing-model"]').forEach((elem) => {
+    elem.addEventListener("change", function(event) {
+      var model = event.target.value;
+      var model_paragraph = document.querySelector('.pricing-model_tsys').textContent;
+      console.log(model);
+      document.querySelector(".pricing-model_tsys").textContent = model;
+    });
+  });
+};
+
+//Interchange Markup - get value
+if (document.querySelector('#field-third')) {
+	document.querySelectorAll('#field-third').forEach((card_vol) => {
+  	 card_vol.addEventListener("change", function(event) {
+     var card_volume = event.target.value;
+     console.log(card_volume);
+       var markup_text = document.querySelector('.markup-text').textContent;
+       var amex = document.querySelector('.amex').textContent;
+       var x = 20000;
+       var y = 70000;
+			 var markup_1 = 0.2;
+			 var markup_2 = 0.15;
+       var markup_3 = 0.1;
+       var coef = 0.1;
+			 var markup_value = markup_1 + coef;
+			 var markup_val = markup_value.toFixed(1)
+       	if (card_volume < x) {
+       		document.querySelector('.markup-text').textContent = markup_1 + "%";
+       		document.querySelector('.amex').textContent = markup_value.toFixed(1) + "%";          
+					return false;
+       			}
+        if (card_volume < y) {
+        	document.querySelector('.markup-text').textContent = markup_2 + "%";
+          document.querySelector('.amex').textContent = markup_2 + coef + "%";
+       		return false;
+        		}
+        else {
+        	document.querySelector('.markup-text').textContent = markup_3 + "%";
+          document.querySelector('.amex').textContent = markup_3 + coef + "%";
+       		return false;
+        		}
+       });
+  });
+}
+</script>
+</body>
+</html>
