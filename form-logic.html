@@ -29,29 +29,24 @@ if (document.querySelector('input[name="pricing-model"]')) {
 	var markup_3 = 0.1;
 	var coef = 0.1;
 	var markup_value = markup_1 + coef;
-       		if (card_volume < x) {
+       		if (card_volume < x, document.getElementById('flat-rate').checked) {
        			document.querySelector('.markup-text').textContent = markup_1 + "%";
        			document.querySelector('.amex').textContent = markup_value.toFixed(1) + "%";          
 			return false;
        			}
-        	if (card_volume < y) {
+        	if (card_volume < y, document.getElementById('flat-rate').checked) {
         		document.querySelector('.markup-text').textContent = markup_2 + "%";
           		document.querySelector('.amex').textContent = markup_2 + coef + "%";
        			return false;
         		}
-        	else {
+        	if (card_volume > y, document.getElementById('flat-rate').checked) {
         		document.querySelector('.markup-text').textContent = markup_3 + "%";
           		document.querySelector('.amex').textContent = markup_3 + coef + "%";
        			return false;
         		}
        });
-		 		if(document.getElementById('flat-rate').checked) {
-			document.querySelector('.markup-text').textContent = "N/A";
-          		document.querySelector('.amex').textContent = "N/A";
-    };
   });
-
-	}
+}
 </script>
 </body>
 </html>
