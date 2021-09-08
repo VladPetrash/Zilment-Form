@@ -40,6 +40,7 @@ function getValue () {
 getValue()
 	
 //pricing-model
+function pricingModel () {
 if (document.querySelector('input[name="pricing-model"]')) {
   document.querySelectorAll('input[name="pricing-model"]').forEach((elem) => {
     elem.addEventListener("change", function(event) {
@@ -59,13 +60,13 @@ if (document.querySelector('input[name="pricing-model"]')) {
 			document.querySelector('.markup-text').textContent = "N/A";
           		document.querySelector('.amex').textContent = "N/A";
     			}
-	        else {
-		 	getValue();
-		}
 	    		
     });
   });
 };
+}
+getValue();
+pricingModel();
 
 </script>
 </body>
