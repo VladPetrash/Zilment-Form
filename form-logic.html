@@ -21,16 +21,17 @@ if (document.querySelector('#field-third')) {
   	 card_vol.addEventListener("change", function(event) {
      var card_volume = event.target.value;
      console.log(card_volume);
-       var markup_text = document.querySelector('.markup-text').textContent;
-       var amex = document.querySelector('.amex').textContent;
-       var x = 20000;
-       var y = 70000;
-			 var markup_1 = 0.2;
-			 var markup_2 = 0.15;
-       var markup_3 = 0.1;
-       var coef = 0.1;
-			 var markup_value = markup_1 + coef;
-			 var markup_val = markup_value.toFixed(1)
+       
+	var markup_text = document.querySelector('.markup-text').textContent;
+	var amex = document.querySelector('.amex').textContent;
+	var x = 20000;
+	var y = 70000;
+	var markup_1 = 0.2;
+	var markup_2 = 0.15;
+	var markup_3 = 0.1;
+	var coef = 0.1;
+	var markup_value = markup_1 + coef;
+	var markup_val = markup_value.toFixed(1)
        	if (card_volume < x) {
        		document.querySelector('.markup-text').textContent = markup_1 + "%";
        		document.querySelector('.amex').textContent = markup_value.toFixed(1) + "%";          
