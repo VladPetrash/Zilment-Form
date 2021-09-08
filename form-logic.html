@@ -16,12 +16,11 @@ if (document.querySelector('input[name="pricing-model"]')) {
 };
 
 //Interchange Markup - get value
-if (document.querySelector('#field-third')) {
-	document.querySelectorAll('#field-third').forEach((card_vol) => {
-  	 card_vol.addEventListener("change", function(event) {
-     var card_volume = event.target.value;
-     console.log(card_volume);
-       
+if(document.getElementById('interchange-plus').checked) {
+	if (document.querySelector('#field-third')) {
+        document.querySelectorAll('#field-third').forEach((card_vol) => {
+        card_vol.addEventListener("change", function(event) {
+	var card_volume = event.target.value;       
 	var markup_text = document.querySelector('.markup-text').textContent;
 	var amex = document.querySelector('.amex').textContent;
 	var x = 20000;
@@ -32,23 +31,27 @@ if (document.querySelector('#field-third')) {
 	var coef = 0.1;
 	var markup_value = markup_1 + coef;
 	var markup_val = markup_value.toFixed(1)
-       	if (card_volume < x) {
-       		document.querySelector('.markup-text').textContent = markup_1 + "%";
-       		document.querySelector('.amex').textContent = markup_value.toFixed(1) + "%";          
-					return false;
+       		if (card_volume < x) {
+       			document.querySelector('.markup-text').textContent = markup_1 + "%";
+       			document.querySelector('.amex').textContent = markup_value.toFixed(1) + "%";          
+			return false;
        			}
-        if (card_volume < y) {
-        	document.querySelector('.markup-text').textContent = markup_2 + "%";
-          document.querySelector('.amex').textContent = markup_2 + coef + "%";
-       		return false;
+        	if (card_volume < y) {
+        		document.querySelector('.markup-text').textContent = markup_2 + "%";
+          		document.querySelector('.amex').textContent = markup_2 + coef + "%";
+       			return false;
         		}
-        else {
-        	document.querySelector('.markup-text').textContent = markup_3 + "%";
-          document.querySelector('.amex').textContent = markup_3 + coef + "%";
-       		return false;
+        	else {
+        		document.querySelector('.markup-text').textContent = markup_3 + "%";
+          		document.querySelector('.amex').textContent = markup_3 + coef + "%";
+       			return false;
         		}
        });
   });
+ }
+}
+else {
+return false;
 }
 </script>
 </body>
