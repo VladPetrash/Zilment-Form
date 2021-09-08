@@ -45,9 +45,6 @@ if (document.querySelector('input[name="pricing-model"]')) {
       var model_paragraph = document.querySelector('.pricing-model_tsys').textContent;
       console.log(model);
       document.querySelector(".pricing-model_tsys").textContent = model;
-	    	if(document.getElementById('interchange-plus').checked) {
-			return false;
-    			}
 	        if(document.getElementById('flat-rate').checked) {
 			document.querySelector('.markup-text').textContent = "N/A";
           		document.querySelector('.amex').textContent = "N/A";
@@ -60,6 +57,9 @@ if (document.querySelector('input[name="pricing-model"]')) {
 			document.querySelector('.markup-text').textContent = "N/A";
           		document.querySelector('.amex').textContent = "N/A";
     			}
+	        else {
+		 	return false;
+		}
 	    		
     });
   });
