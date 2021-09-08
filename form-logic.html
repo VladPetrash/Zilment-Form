@@ -5,7 +5,6 @@
 <script>
 
 //Interchange Markup - get value
-function getValue () {
 	if (document.querySelector('#field-third')) {
         document.querySelectorAll('#field-third').forEach((card_vol) => {
         card_vol.addEventListener("change", function(event) {
@@ -19,6 +18,7 @@ function getValue () {
 	var markup_3 = 0.1;
 	var coef = 0.1;
 	var markup_value = markup_1 + coef;
+		function getValue () {
        		if (card_volume < x) {
        			document.querySelector('.markup-text').textContent = markup_1 + "%";
        			document.querySelector('.amex').textContent = markup_value.toFixed(1) + "%";          
