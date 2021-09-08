@@ -5,6 +5,7 @@
 <script>
 
 //Interchange Markup - get value
+function getValue () {
 	if (document.querySelector('#field-third')) {
         document.querySelectorAll('#field-third').forEach((card_vol) => {
         card_vol.addEventListener("change", function(event) {
@@ -35,7 +36,8 @@
         		}
        });
   });
-}
+}}
+getValue()
 	
 //pricing-model
 if (document.querySelector('input[name="pricing-model"]')) {
@@ -58,7 +60,7 @@ if (document.querySelector('input[name="pricing-model"]')) {
           		document.querySelector('.amex').textContent = "N/A";
     			}
 	        else {
-		 	return false;
+		 	getValue();
 		}
 	    		
     });
