@@ -3,17 +3,6 @@
 <body>
 	
 <script>
-//pricing-model
-if (document.querySelector('input[name="pricing-model"]')) {
-  document.querySelectorAll('input[name="pricing-model"]').forEach((elem) => {
-    elem.addEventListener("change", function(event) {
-      var model = event.target.value;
-      var model_paragraph = document.querySelector('.pricing-model_tsys').textContent;
-      console.log(model);
-      document.querySelector(".pricing-model_tsys").textContent = model;
-    });
-  });
-};
 
 //Interchange Markup - get value
 	if (document.querySelector('#field-third')) {
@@ -29,17 +18,17 @@ if (document.querySelector('input[name="pricing-model"]')) {
 	var markup_3 = 0.1;
 	var coef = 0.1;
 	var markup_value = markup_1 + coef;
-       		if (card_volume < x, document.getElementById('flat-rate').checked) {
+       		if (card_volume < x) {
        			document.querySelector('.markup-text').textContent = markup_1 + "%";
        			document.querySelector('.amex').textContent = markup_value.toFixed(1) + "%";          
 			return false;
        			}
-        	if (card_volume < y, document.getElementById('flat-rate').checked) {
+        	if (card_volume < y) {
         		document.querySelector('.markup-text').textContent = markup_2 + "%";
           		document.querySelector('.amex').textContent = markup_2 + coef + "%";
        			return false;
         		}
-        	if (card_volume > y, document.getElementById('flat-rate').checked) {
+        	else {
         		document.querySelector('.markup-text').textContent = markup_3 + "%";
           		document.querySelector('.amex').textContent = markup_3 + coef + "%";
        			return false;
@@ -47,6 +36,23 @@ if (document.querySelector('input[name="pricing-model"]')) {
        });
   });
 }
+	
+//pricing-model
+if (document.querySelector('input[name="pricing-model"]')) {
+  document.querySelectorAll('input[name="pricing-model"]').forEach((elem) => {
+    elem.addEventListener("change", function(event) {
+      var model = event.target.value;
+      var model_paragraph = document.querySelector('.pricing-model_tsys').textContent;
+      console.log(model);
+      document.querySelector(".pricing-model_tsys").textContent = model;
+	    		if(document.getElementById('flat-rate').checked) {
+			document.querySelector('.markup-text').textContent = "N/A";
+          		document.querySelector('.amex').textContent = "N/A";
+    };
+    });
+  });
+};
+
 </script>
 </body>
 </html>
