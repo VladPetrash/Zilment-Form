@@ -30,7 +30,6 @@ if (document.querySelector('input[name="pricing-model"]')) {
 	var coef = 0.1;
 	var markup_value = markup_1 + coef;
 	var markup_val = markup_value.toFixed(1)
-	if(document.getElementById('interchange-plus').checked) {
        		if (card_volume < x) {
        			document.querySelector('.markup-text').textContent = markup_1 + "%";
        			document.querySelector('.amex').textContent = markup_value.toFixed(1) + "%";          
@@ -46,7 +45,7 @@ if (document.querySelector('input[name="pricing-model"]')) {
           		document.querySelector('.amex').textContent = markup_3 + coef + "%";
        			return false;
         		}
-       }); }
+       }); 
   });
  }
 
