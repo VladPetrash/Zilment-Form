@@ -3,7 +3,6 @@
 <body>
 	
 <script>
-
 //Interchange Markup - get value
 	if (document.querySelector('#field-third')) {
         document.querySelectorAll('#field-third').forEach((card_vol) => {
@@ -35,7 +34,7 @@
        			return false;
         		}
 		};
-		getValue()
+		document.getElementById("finish").onclick = getValue();
 
 	});
 });
@@ -67,7 +66,6 @@ if (document.querySelector('input[name="pricing-model"]')) {
   });
 };
 }
-document.getElementById("finish").onclick = getValue();
 document.getElementById("finish").onclick = pricingModel();
 		
 
