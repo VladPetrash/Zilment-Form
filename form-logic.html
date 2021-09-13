@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <body>
-	
 <script>
 //Interchange Markup - get value
 function getValue () {
@@ -38,7 +37,6 @@ function getValue () {
        			return false;
         		}
 	}
-	
 //pricing-model
 if (document.querySelector('input[name="pricing-model"]')) {
   document.querySelectorAll('input[name="pricing-model"]').forEach((elem) => {
@@ -77,16 +75,14 @@ if (document.querySelector('input[name="pricing-model"]')) {
 			document.querySelector('.swipe-fee').textContent = "N/A";
 			document.querySelector('.monthly-fee').textContent = "$15,00";
 			document.querySelector('.compliance').textContent = "$14.99";
-    			}
-	    	
+    			}	
     });
   });
 };
 if (document.querySelector('input[name="pricing-model"]')) {
   document.querySelectorAll('input[name="pricing-model"]').forEach((elem) => {
     elem.addEventListener("change", function(event) {
-	var tsys_rate = document.querySelector('.tsys_rate').textContent;
-	    
+	var tsys_rate = document.querySelector('.tsys_rate').textContent;	    
     		if(document.getElementById('cash-discount-surcharge').checked) {
 			document.querySelector('.tsys_rate').textContent = "N/A";
 		}
@@ -95,7 +91,6 @@ if (document.querySelector('input[name="pricing-model"]')) {
   			document.querySelectorAll('input[name="specific-brands"]').forEach((elem) => {
     			elem.addEventListener("change", function(event) {
 				if(document.getElementById('brands-radio-clover').checked) {
-					//var tsys_rate = document.querySelector('.tsys_rate').textContent;
 					document.querySelector('.tsys_rate').textContent = "N/A";
 				}
 				else {
@@ -124,7 +119,6 @@ if (document.querySelector('input[name="pricing-model"]')) {
 					});
 					});
 					}
-					//скобки
 					else {
 						if (document.querySelector('input[name="pricing-model"]')) {
   						document.querySelectorAll('input[name="pricing-model"]').forEach((elem) => {
@@ -153,20 +147,14 @@ if (document.querySelector('input[name="pricing-model"]')) {
 						});
 						}
 					}
-	
-				}
-		
+				}		
 			});
 			});
 			}
 		}
-    
     });
   });
 }
-			
-
-
 </script>
 </body>
 </html>
