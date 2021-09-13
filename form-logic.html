@@ -7,8 +7,12 @@
 function getValue () {
 	if (document.querySelector('#field-third')) {
         document.querySelectorAll('#field-third').forEach((card_vol) => {
-        card_vol.addEventListener("change", function(event) {
-	var card_volume = event.target.value;       
+        card_vol.addEventListener("change", () => {changeValue(event.target.value)});
+});
+}
+}
+	function changeValue (value) {
+	var card_volume = value;       
 	var markup_text = document.querySelector('.markup-text').textContent;
 	var amex = document.querySelector('.amex').textContent;
 	var x = 20000;
@@ -33,10 +37,8 @@ function getValue () {
           		document.querySelector('.amex').textContent = markup_3 + coef + "%";
        			return false;
         		}
-	});
-});
-}
-}
+	}
+	
 //pricing-model
 if (document.querySelector('input[name="pricing-model"]')) {
   document.querySelectorAll('input[name="pricing-model"]').forEach((elem) => {
@@ -58,11 +60,9 @@ if (document.querySelector('input[name="pricing-model"]')) {
           		document.querySelector('.amex').textContent = "N/A";
     			}
 	    	if(document.getElementById('interchange-plus').checked) {
-			document.getElementById('field-third').value = document.getElementById('field-third').value + ".0"
-			getValue();
-			}
-
-	    		
+			var value = document.querySelector('#field-third').value;
+			changeValue(value);
+			}	
     });
   });
 };
