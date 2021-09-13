@@ -47,6 +47,7 @@ if (document.querySelector('input[name="pricing-model"]')) {
       var model_paragraph = document.querySelector('.pricing-model_tsys').textContent;
       var swipe_paragraph = document.querySelector('.swipe-fee').textContent;
       var monthly_paragraph = document.querySelector('.monthly-fee').textContent;
+      var compliance_paragraph = document.querySelector('.compliance').textContent;
       console.log(model);
       document.querySelector(".pricing-model_tsys").textContent = model;
 	    	if(document.getElementById('interchange-plus').checked) {
@@ -54,24 +55,28 @@ if (document.querySelector('input[name="pricing-model"]')) {
 			changeValue(value);
 			document.querySelector('.swipe-fee').textContent = "0.05%";
 			document.querySelector('.monthly-fee').textContent = "$15,00";
+			document.querySelector('.compliance').textContent = "$14.99";
 			}
 	        if(document.getElementById('flat-rate').checked) {
 			document.querySelector('.markup-text').textContent = "N/A";
           		document.querySelector('.amex').textContent = "N/A";
 			document.querySelector('.swipe-fee').textContent = "0.05%";
 			document.querySelector('.monthly-fee').textContent = "$0,00";
+			document.querySelector('.compliance').textContent = "$0.00";
     			}
 	        if(document.getElementById('tiered').checked) {
 			document.querySelector('.markup-text').textContent = "N/A";
           		document.querySelector('.amex').textContent = "N/A";
 			document.querySelector('.swipe-fee').textContent = "N/A";
 			document.querySelector('.monthly-fee').textContent = "$15,00";
+			document.querySelector('.compliance').textContent = "$14.99";
     			}
 	        if(document.getElementById('cash-discount-surcharge').checked) {
 			document.querySelector('.markup-text').textContent = "N/A";
           		document.querySelector('.amex').textContent = "N/A";
 			document.querySelector('.swipe-fee').textContent = "N/A";
 			document.querySelector('.monthly-fee').textContent = "$15,00";
+			document.querySelector('.compliance').textContent = "$14.99";
     			}
 	    	
     });
