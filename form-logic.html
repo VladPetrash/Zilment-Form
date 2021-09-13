@@ -82,6 +82,86 @@ if (document.querySelector('input[name="pricing-model"]')) {
     });
   });
 };
+if (document.querySelector('input[name="pricing-model"]')) {
+  document.querySelectorAll('input[name="pricing-model"]').forEach((elem) => {
+    elem.addEventListener("change", function(event) {
+	var tsys_rate = document.querySelector('.tsys_rate').textContent;
+	    
+    		if(document.getElementById('cash-discount-surcharge').checked) {
+			document.querySelector('.tsys_rate').textContent = "N/A";
+		}
+	    	else {
+			if (document.querySelector('input[name="specific-brands"]')) {
+  			document.querySelectorAll('input[name="specific-brands"]').forEach((elem) => {
+    			elem.addEventListener("change", function(event) {
+				if(document.getElementById('brands-radio-clover').checked) {
+					document.querySelector('.tsys_rate').textContent = "N/A";
+				}
+				else {
+					if (document.querySelector('input[name="types-choice"]')) {
+  					document.querySelectorAll('input[name="types-choice"]').forEach((elem) => {
+    					elem.addEventListener("change", function(event) {
+						if(document.getElementById('types-radio-yes').checked) {
+							if (document.querySelector('input[name="request-choice"]')) {
+  							document.querySelectorAll('input[name="request-choice"]').forEach((elem) => {
+    							elem.addEventListener("change", function(event) {
+								if(document.getElementById('req-radio-yes').checked) {
+									if (document.querySelector('input[name="online-choice"]')) {
+  									document.querySelectorAll('input[name="online-choice"]').forEach((elem) => {
+    									elem.addEventListener("change", function(event) { 
+										if(document.getElementById('pay-radio-yes').checked) {
+											document.querySelector('.tsys_rate').textContent = "N/A";
+										}
+									});
+									});
+									}
+								}
+							});
+							});
+							}
+						}
+					});
+					});
+					}
+					else {
+						if (document.querySelector('input[name="pricing-model"]')) {
+  						document.querySelectorAll('input[name="pricing-model"]').forEach((elem) => {
+   						elem.addEventListener("change", function(event) {
+							if(document.getElementById('flat-rate').checked) {
+								document.querySelector('.tsys_rate').textContent = "2.5%";
+							}
+							else {
+								if (document.querySelector('input[name="pricing-model"]')) {
+  								document.querySelectorAll('input[name="pricing-model"]').forEach((elem) => {
+   								elem.addEventListener("change", function(event) {
+									var markup_value = document.getElementById("markup_value").value
+									var monthly_value = document.getElementById("monthly_value").value
+									var volume_value = document.getElementById("field-third").value;
+									if(document.getElementById('types-radio-no-new').checked) {
+										document.querySelector('.tsys_rate').textContent = (0.0175 + (markup_value / 100) + monthly_value) / volume_value;
+									}
+									else {
+										document.querySelector('.tsys_rate').textContent = (0.0135 + (markup_value / 100) + monthly_value) / volume_value;
+									}
+								});
+								});
+								}
+							}
+						});
+						});
+						}
+					}
+	
+				}
+		
+			});
+			});
+			}
+		}
+    
+    });
+  });
+}
 		
 
 
