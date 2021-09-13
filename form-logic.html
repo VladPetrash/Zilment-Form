@@ -46,28 +46,32 @@ if (document.querySelector('input[name="pricing-model"]')) {
       var model = event.target.value;
       var model_paragraph = document.querySelector('.pricing-model_tsys').textContent;
       var swipe_paragraph = document.querySelector('.swipe-fee').textContent;
+      var monthly_paragraph = document.querySelector('.monthly-fee').textContent;
       console.log(model);
       document.querySelector(".pricing-model_tsys").textContent = model;
 	    	if(document.getElementById('interchange-plus').checked) {
 			var value = document.querySelector('#field-third').value;
 			changeValue(value);
 			document.querySelector('.swipe-fee').textContent = "0.05%";
-
+			document.querySelector('.monthly-fee').textContent = "$15,00";
 			}
 	        if(document.getElementById('flat-rate').checked) {
 			document.querySelector('.markup-text').textContent = "N/A";
           		document.querySelector('.amex').textContent = "N/A";
 			document.querySelector('.swipe-fee').textContent = "0.05%";
+			document.querySelector('.monthly-fee').textContent = "$0,00";
     			}
 	        if(document.getElementById('tiered').checked) {
 			document.querySelector('.markup-text').textContent = "N/A";
           		document.querySelector('.amex').textContent = "N/A";
 			document.querySelector('.swipe-fee').textContent = "N/A";
+			document.querySelector('.monthly-fee').textContent = "$15,00";
     			}
 	        if(document.getElementById('cash-discount-surcharge').checked) {
 			document.querySelector('.markup-text').textContent = "N/A";
           		document.querySelector('.amex').textContent = "N/A";
 			document.querySelector('.swipe-fee').textContent = "N/A";
+			document.querySelector('.monthly-fee').textContent = "$15,00";
     			}
 	    	
     });
