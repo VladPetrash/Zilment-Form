@@ -95,7 +95,7 @@ if (document.querySelector('input[name="pricing-model"]')) {
   			document.querySelectorAll('input[name="specific-brands"]').forEach((elem) => {
     			elem.addEventListener("change", function(event) {
 				if(document.getElementById('brands-radio-clover').checked) {
-					var tsys_rate = document.querySelector('.tsys_rate').textContent;
+					//var tsys_rate = document.querySelector('.tsys_rate').textContent;
 					document.querySelector('.tsys_rate').textContent = "N/A";
 				}
 				else {
