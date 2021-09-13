@@ -4,6 +4,7 @@
 	
 <script>
 //Interchange Markup - get value
+function getValue () {
 	if (document.querySelector('#field-third')) {
         document.querySelectorAll('#field-third').forEach((card_vol) => {
         card_vol.addEventListener("change", function(event) {
@@ -35,6 +36,7 @@
 	});
 });
 }
+}
 //pricing-model
 if (document.querySelector('input[name="pricing-model"]')) {
   document.querySelectorAll('input[name="pricing-model"]').forEach((elem) => {
@@ -57,6 +59,7 @@ if (document.querySelector('input[name="pricing-model"]')) {
     			}
 	    	if(document.getElementById('interchange-plus').checked) {
 			document.getElementById('field-third').value = document.getElementById('field-third').value + ".0"
+			getValue();
 			}
 
 	    		
