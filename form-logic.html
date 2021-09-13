@@ -38,6 +38,7 @@ function getValue () {
 }
 }
 document.getElementById("finish").onclick = getValue();
+console.log(card_volume);
 	
 //pricing-model
 function pricingModel () {
@@ -60,15 +61,15 @@ if (document.querySelector('input[name="pricing-model"]')) {
 			document.querySelector('.markup-text').textContent = "N/A";
           		document.querySelector('.amex').textContent = "N/A";
     			}
+	    	if(document.getElementById('interchange-plus').checked) {
+			document.getElementById("field-third").value = + ".0";
+			getValue();
+			}
 	    		
     });
   });
 };
-}
-document.getElementById("finish").onclick = document.getElementById("field-third").value = + ".0";
-
-document.getElementById("finish").onclick = pricingModel();
-		
+}		
 
 
 </script>
