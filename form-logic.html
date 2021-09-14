@@ -80,23 +80,79 @@ if (document.querySelector('input[name="pricing-model"]')) {
 };
 
 	
-//value for tsys card
+<!-- value for tsys card -->
 	
+	//get pricing model
 function getPricingModel () {
 	if (document.querySelector('input[name="pricing-model"]')) {
-        document.querySelectorAll('input[name="pricing-model"]').forEach((pricingModelValue) => {
-        pricingModelValue.addEventListener("change", () => {changePricingModel(event.target.value)});
+        document.querySelectorAll('input[name="pricing-model"]').forEach((elem) => {
+        elem.addEventListener("change", () => {changePricingModel(event.target.value)});
 });
 }
 }
 function changePricingModel (value) {
 	var pricingModel = value;
-	console.log(pricingModel);
 }
+	//get specific brands
+function getSpecificBrands () {
+	if (document.querySelector('input[name="specific-brands"]')) {
+        document.querySelectorAll('input[name="specific-brands"]').forEach((elem) => {
+        elem.addEventListener("change", () => {changeSpecificBrands(event.target.value)});
+});
+}
+}
+function changeSpecificBrands (value) {
+	var specificBrands = value;
+}
+	//get types choise
+function getTypesChoise () {
+	if (document.querySelector('input[name="types-choice"]')) {
+	document.querySelectorAll('input[name ="types-choice"]').forEach((elem) => {
+	elem.addEventListener("change", () => {changeTypesChoice(event.target.value)});
+	});
+	}
+	}
+function changeTypesChoice (value) {
+	var typesChoice = value;
+}	
+	//get request choice
+function getRequestChoice () {
+	if (document.querySelector('input[name="request-choice"]')) {
+	document.querySelectorAll('input[name="request-choice"]').forEach((elem) => {
+	elem.addEventListener("change", () => {changeRequestChoice(event.target.value)});
+	});
+	}
+	}
+function changeRequestChoice (value) {
+	var requestChoice = value;
+}
+	//get online choice
+function getOnlineChoice () {
+	if(document.querySelector('input[name="online-choice"]')) {
+	document.querySelectorAll('input[name="inline-choice"]').forEach((elem) => {
+	elem.addEventListener("change", () => {changeOnlineChoice(event.target.value)});
+	});
+	}
+	}
+function changeOnlineChoice (value) {
+	var onlineChoice = value;
+}
+	//get debit choice
+function getDebitChoice () {
+	if(document.querySelector('input[name="debit-choice"]')) {
+	document.querySelectorAll('input[name="debit-choice"]').forEach((elem) => {
+	elem.addEventListener("change", () => {changeDebitChoice(event.target.value)});
+	});
+	}
+	}
+function changeDebitChoice (value) {
+	var debitChoice = value;
+}	
+<!-- trigger -->
 document.getElementById("submit-btn").onclick = function () {
-	var value = document.querySelector('input[name="pricing-model"]:checked').value;
-	changePricingModel(value);
-	console.log(value);
+	var value_1 = document.querySelector('input[name="pricing-model"]:checked').value;
+	changePricingModel(value_1);
+	console.log(value_1);
 };
 	
 
