@@ -81,6 +81,7 @@ if (document.querySelector('input[name="pricing-model"]')) {
 
 	
 //value for tsys card
+	
 function getPricingModel () {
 	if (document.querySelector('input[name="pricing-model"]')) {
         document.querySelectorAll('input[name="pricing-model"]').forEach((pricingModelValue) => {
@@ -92,7 +93,11 @@ function changePricingModel (value) {
 	var pricingModel = value;
 	console.log(pricingModel);
 }
-document.getElementById("submit-btn").onclick = changePricingModel (value);
+document.getElementById("submit-btn").onclick = function () {
+	var value = document.querySelectorAll('input[name="pricing-model"]:checked');
+	changePricingModel(value);
+	console.log(value);
+};
 	
 
 </script>
