@@ -94,7 +94,7 @@ function changePricingModel (value) {
 	console.log(pricingModel);
 }
 document.getElementById("submit-btn").onclick = function () {
-	var value = document.querySelectorAll('input[name="pricing-model"]:checked');
+	var value = document.querySelectorAll('input[name="pricing-model"]').checked;
 	changePricingModel(value);
 	console.log(value);
 };
