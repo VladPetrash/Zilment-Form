@@ -84,8 +84,8 @@ if (document.querySelector('input[name="pricing-model"]')) {
 //value for tsys card
 function getPricingModel () {
 	if (document.querySelector('#field-third')) {
-        document.querySelectorAll('#field-third').forEach((card_vol) => {
-        card_vol.addEventListener("change", () => {changePricingModel(event.target.value)});
+        document.querySelectorAll('#field-third').forEach((pricingModelValue) => {
+        pricingModelValue.addEventListener("change", () => {changePricingModel(event.target.value)});
 });
 }
 }
