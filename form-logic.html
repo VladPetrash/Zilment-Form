@@ -261,13 +261,12 @@ function effectiveRateTsys_2 () {
 	<!-- MONTHLY FEES TSYS -->
 function monthlyFeesTsys () {
 	var rateTsys = document.querySelector(".tsys_rate").textContent;
-	var feesTsys = document.querySelector(".tsys_fees").textContent;
 	var fieldTsys = document.querySelector('#field-third').value;
 	var rateTsys_num = parseFloat(rateTsys);
 	var fieldTsys_num = parseInt(fieldTsys);
 	console.log(rateTsys_num);
 	console.log(fieldTsys_num);
-	feesTsys.textContent = "$" + (rateTsys_num * fieldTsys_num);
+	document.querySelector(".tsys_fees").textContent = "$" + (rateTsys_num * fieldTsys_num);
 }
 </script>
 </body>
