@@ -195,7 +195,7 @@ function effectiveRateTsys () {
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
 	changePricingModel(pricing_value);
 	if(document.getElementById('cash-discount-surcharge').checked) {
-	alert("hello");
+	document.querySelector('.tsys_rate').textContent = "N/A";
 	}
 }
 
