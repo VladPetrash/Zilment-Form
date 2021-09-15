@@ -309,7 +309,7 @@ function annualSavingsTsys () {
 	var fees_tsys = document.querySelector('.tsys_fees').textContent;
 	var feesTsys_matches = fees_tsys.match(/(\d+)/);
 	var feesTsys_num = parseInt(feesTsys_matches);
-	var fourthField_num = perseFloat(fourth_field);
+	var fourthField_num = parseFloat(fourth_field);
 	if(document.getElementById('radio-cards-no').checked || document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked) {
 	document.querySelector(".tsys_saving").textContent = "N/A";
 	}
