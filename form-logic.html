@@ -314,7 +314,7 @@ function annualSavingsTsys () {
 	document.querySelector(".tsys_saving").textContent = "N/A";
 	}
 	else{
-		document.querySelector(".tsys_saving").textContent = "$" + (feesTsys_num * fourthField_num).toFixed(0);
+		document.querySelector(".tsys_saving").textContent = "$" + ((fourthField_num - feesTsys_num) * 12).toFixed(0);
 	}
 	
 }
