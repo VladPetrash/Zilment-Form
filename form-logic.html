@@ -244,8 +244,8 @@ function effectiveRateTsys_2 () {
 		console.log(markup_value);
 		console.log(monthly_value);
 		console.log(field_value);
-		var markup_num = parseInt("markup_value", 100);
-		var monthly_num = parseInt("monthly_value" 100);
+		var markup_num = parseInt(markup_value, 10);
+		var monthly_num = parseInt(monthly_value);
 		var field_num = parseInt(field_value);
 		if(document.getElementById('types-radio-no-new').checked) {
 		document.querySelector('.tsys_rate').textContent = ((0.0175 + (markup_num / 100)) + (monthly_num / field_num)) * 100 +;
