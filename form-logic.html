@@ -148,28 +148,6 @@ function getDebitChoice () {
 function changeDebitChoice (value) {
 	var debitChoice = value;
 }	
-	//get markup value
-function getMarkupValue () {
-	if(document.querySelector('#markup_value')) {
-	document.querySelectorAll('#markup_value').forEach((elem) => {
-	elem.addEventListener("change", () => {changeMarkupValue(event.target.value)});
-	});
-	}
-}
-function changeMarkupValue (value) {
-	var markupValue = value;
-}
-	//get monthly value
-function getMonthlyValue () {
-	if(document.querySelector('#monthly_value')) {
-	document.querySelectoeAll('#monthly_value').forEach((elem) => {
-	elem.addEventListener("change", () => {changeMonthlyValue(event.target.value)});
-	});
-	}
-}
-function changeMonthlyValue (value) {
-	var monthlyValue = value;
-}
 	//get field third
 function getFieldThird () {
 	if(document.querySelector('#field-third')) {
@@ -189,8 +167,8 @@ document.getElementById("submit-btn").onclick = function () {
 	var request_value = document.querySelector('input[name="request-choice"]:checked').value;
 	var online_value = document.querySelector('input[name="online-choice"]:checked').value;
 	var debit_value = document.querySelector('input[name="debit-choice"]:checked').value;
-	var markup_value = document.querySelector("#markup_value").value
-	var monthly_value = document.querySelector("#monthly_value").value
+	var markup_value = document.querySelector("#markup_value").textContent;
+	var monthly_value = document.querySelector("#monthly_value").textContent;
 	var field_value = document.querySelector('#field-third').value;
 	changePricingModel(pricing_value);
 	changeSpecificBrands(specific_value);
@@ -198,8 +176,6 @@ document.getElementById("submit-btn").onclick = function () {
 	changeRequestChoice(request_value);
 	changeOnlineChoice(online_value);
 	changeDebitChoice(debit_value);
-	changeMarkupValue(markup_value);
-	changeMonthlyValue(monthly_value);
 	changeFieldThird(field_value);
 	console.log(pricing_value);
 	console.log(specific_value);
