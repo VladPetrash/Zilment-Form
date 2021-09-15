@@ -209,10 +209,10 @@ function effectiveRateTsys_1 () {
 			if(document.getElementById('types-radio-yes').checked) {
 				var request_value = document.querySelector('input[name="request-choice"]:checked').value;
 				changeRequestChoice(request_value);
-				if(document.getElementById('types-radio-yes').checked) {
+				if(document.getElementById('req-radio-yes').checked) {
 					var online_value = document.querySelector('input[name="online-choice"]:checked').value;
 					changeOnlineChoice(online_value);
-					if(document.getElementById('types-radio-yes').checked){
+					if(document.getElementById('pay-radio-yes').checked){
 					document.querySelector('.tsys_rate').textContent = "3";
 					}
 					else{
