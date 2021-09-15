@@ -183,6 +183,7 @@ function changeCardChoice (value) {
 }
 <!-- trigger -->
 document.getElementById("submit-btn").onclick = function () {
+	acceptCards ();
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
 	var specific_value = document.querySelector('input[name="specific-brands"]:checked').value;
 	var types_value = document.querySelector('input[name="types-choice"]:checked').value;
@@ -211,7 +212,6 @@ document.getElementById("submit-btn").onclick = function () {
 	console.log(monthly_value);
 	console.log(field_value);
 	console.log(card_value);
-	acceptCards ();
 	effectiveRateTsys_1 ();
 	monthlyFeesTsys ();
 	annualSavingsTsys ();
