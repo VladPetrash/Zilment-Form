@@ -244,11 +244,13 @@ function effectiveRateTsys_2 () {
 		console.log(markup_value);
 		console.log(monthly_value);
 		console.log(field_value);
+		var markup_num = percentIn(markup_value);
+		var monthly_num = percentIn(monthly_value);
 		if(document.getElementById('types-radio-no-new').checked) {
-		document.querySelector('.tsys_rate').textContent = (0.0175 + (markup_value / 100) + monthly_value) / field_value;
+		document.querySelector('.tsys_rate').textContent = ((0.0175 + (markup_num / 100)) + (monthly_num / field_value)) * 100;
 		}
 		else{
-		document.querySelector('.tsys_rate').textContent = (0.0135 + (markup_value / 100) + monthly_value) / field_value;	
+		document.querySelector('.tsys_rate').textContent = ((0.0135 + (markup_num / 100)) + (monthly_num / field_value)) * 100;	
 		}
 	}
 }
