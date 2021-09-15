@@ -195,13 +195,13 @@ function effectiveRateTsys_1 () {
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
 	changePricingModel(pricing_value);
 	if(document.getElementById('cash-discount-surcharge').checked) {
-	document.querySelector('.tsys_rate').textContent = "N/A";
+	document.querySelector('.tsys_rate').textContent = "1";
 	}
 	else{
 		var specific_value = document.querySelector('input[name="specific-brands"]:checked').value;
 		changeSpecificBrands(specific_value);
 		if(document.getElementById('brands-radio-clover').checked) {
-		document.querySelector('.tsys_rate').textContent = "N/A";
+		document.querySelector('.tsys_rate').textContent = "2";
 		}
 		else{
 			var types_value = document.querySelector('input[name="types-choice"]:checked').value;
@@ -213,7 +213,7 @@ function effectiveRateTsys_1 () {
 					var online_value = document.querySelector('input[name="online-choice"]:checked').value;
 					changeOnlineChoice(online_value);
 					if(document.getElementById('types-radio-yes').checked){
-					document.querySelector('.tsys_rate').textContent = "N/A";
+					document.querySelector('.tsys_rate').textContent = "3";
 					}
 					else{
 						effectiveRateTsys_2();
@@ -233,7 +233,7 @@ function effectiveRateTsys_2 () {
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
 	changePricingModel(pricing_value);
 	if(document.getElementById('flat-rate').checked) {
-	document.querySelector('.tsys_rate').textContent = "2.5%";
+	document.querySelector('.tsys_rate').textContent = "4";
 	}
 	else{
 		var debit_value = document.querySelector('input[name="debit-choice"]:checked').value;
@@ -245,10 +245,10 @@ function effectiveRateTsys_2 () {
 		console.log(monthly_value);
 		console.log(field_value);
 		if(document.getElementById('types-radio-no-new').checked) {
-		document.querySelector('.tsys_rate').textContent = (0.0175 + (markup_value / 100) + monthly_value) / field_value;
+		document.querySelector('.tsys_rate').textContent = "5";
 		}
 		else{
-		document.querySelector('.tsys_rate').textContent = (0.0135 + (markup_value / 100) + monthly_value) / field_value;	
+		document.querySelector('.tsys_rate').textContent = "6";	
 		}
 	}
 }
