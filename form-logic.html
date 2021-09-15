@@ -186,8 +186,18 @@ document.getElementById("submit-btn").onclick = function () {
 	console.log(markup_value);
 	console.log(monthly_value);
 	console.log(field_value);
+	effectiveRateTsys ();
+
 };
-	
+
+	<!-- EFFECTIVE RATE TSYS -->
+function effectiveRateTsys () {
+	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
+	changePricingModel(pricing_value);
+	if(document.getElementById('cash-discount-surcharge').checked) {
+	alert("hello");
+	}
+}
 
 </script>
 </body>
