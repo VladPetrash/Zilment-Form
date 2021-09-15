@@ -159,6 +159,28 @@ function getFieldThird () {
 function changeFieldThird (value) {
 	var fieldThird = value;
 }
+	//get fourth third
+function getFieldFourth () {
+	if(document.querySelector('#field-fourth')) {
+	document.querySelectorAll('#field-fourth').forEach((elem) => {
+	elem.addEventListener("change", () => {changeFieldFourth(event.target.value)});
+	});
+	}
+}
+function changeFieldFourth (value) {
+	var fieldFourth = value;
+}
+	//get 2 slide value
+function getCardsChoice () {
+	if(document.querySelector('input[name="radio-cards"]')) {
+	document.querySelectorAll('input[name="radio-cards"]').forEach((elem) => {
+	elem.addEventListener("change", () => {changeCardChoice(event.target.value)});
+	});
+	}
+}
+function changeCardChoice (value) {
+	var cardChoice = value;
+}
 <!-- trigger -->
 document.getElementById("submit-btn").onclick = function () {
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
@@ -170,6 +192,7 @@ document.getElementById("submit-btn").onclick = function () {
 	var markup_value = document.querySelector("#markup_value").textContent;
 	var monthly_value = document.querySelector("#monthly_value").textContent;
 	var field_value = document.querySelector('#field-third').value;
+	var card_value = document.querySelector('input[name="radio-cards"]:checked').value;
 	changePricingModel(pricing_value);
 	changeSpecificBrands(specific_value);
 	changeTypesChoice(types_value);
@@ -177,6 +200,7 @@ document.getElementById("submit-btn").onclick = function () {
 	changeOnlineChoice(online_value);
 	changeDebitChoice(debit_value);
 	changeFieldThird(field_value);
+	changeCardChoice (card_value)
 	console.log(pricing_value);
 	console.log(specific_value);
 	console.log(types_value);
@@ -186,8 +210,10 @@ document.getElementById("submit-btn").onclick = function () {
 	console.log(markup_value);
 	console.log(monthly_value);
 	console.log(field_value);
+	console.log(card_value);
 	effectiveRateTsys_1 ();
 	monthlyFeesTsys ();
+	annualSavingsTsys ();
 
 };
 
@@ -260,13 +286,37 @@ function effectiveRateTsys_2 () {
 }
 	<!-- MONTHLY FEES TSYS -->
 function monthlyFeesTsys () {
+	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
+	changePricingModel(pricing_value);
 	var rateTsys = document.querySelector(".tsys_rate").textContent;
 	var fieldTsys = document.querySelector('#field-third').value;
 	var rateTsys_num = parseFloat(rateTsys);
 	var fieldTsys_num = parseInt(fieldTsys);
 	console.log(rateTsys_num);
 	console.log(fieldTsys_num);
-	document.querySelector(".tsys_fees").textContent = "$" + (rateTsys_num * fieldTsys_num);
+	if(document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked) {
+	document.querySelector('.tsys_fees').textContent = "N/A";
+	}
+	else {
+	document.querySelector(".tsys_fees").textContent = "$" + ((rateTsys_num * fieldTsys_num)).toFixed(0);
+	}
+}
+	<!-- ANNUAL SAVINGS TSYS -->
+function annualSavingsTsys () {
+	var card_value = document.querySelector('input[name="radio-cards"]:checked').value;
+	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
+	var fourth_field = document.querySelector('#fourth-field').value;
+	var fees_tsys = document.querySelector('.tsys_fees').textContent;
+	var feesTsys_matches = fees_tsys.match(/(\d+)/);
+	var feesTsys_num = parseInt(feesTsys_matches);
+	var fourthField_num = perseFloat(fourth_field);
+	if(document.getElementById('radio-cards-no').checked || document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked) {
+	document.querySelector(".tsys_saving").textContent = "N/A";
+	}
+	else{
+		document.querySelector(".tsys_saving").textContent = "$" + (feesTsys_num * fourthField_num).toFixed(0);
+	}
+	
 }
 </script>
 </body>
