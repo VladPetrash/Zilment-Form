@@ -318,6 +318,15 @@ function annualSavingsTsys () {
 	}
 	
 }
+	// if we click YES on second slide
+function acceptCards () {
+	var click_yes = document.querySelector('input[name="radio-cards"]:checked').value;
+	if(document.getElementById('radio-cards-yes').checked) {
+	document.querySelector('.tsys_rate').textContent = "N/A";
+	document.querySelector('.tsys_fees').textContent = "N/A";
+	document.querySelector(".tsys_saving").textContent = "N/A";
+	}
+}
 </script>
 </body>
 </html>
