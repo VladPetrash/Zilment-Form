@@ -264,9 +264,9 @@ function monthlyFeesTsys () {
 	var rateTsys = document.querySelector(".tsys_rate").textContent;
 	var feesTsys = document.querySelector(".tsys_fees").textContent;
 	var fieldTsys = document.querySelector('#field-third').value;
-	var rateTsys_matches = rateTsys.match(/(\d+)/);
+	var rateTsys_matches = rateTsys.match(/\d+/g);
 	var rateTsys_num = parseInt(rateTsys_matches);
-	var fieldTsys_matches = fieldTsys.match(/(\d+)/);
+	var fieldTsys_matches = fieldTsys.match(/\d+/g);
 	var fieldTsys_num = parseInt(fieldTsys_matches);
 	console.log(rateTsys_num);
 	console.log(fieldTsys_num);
