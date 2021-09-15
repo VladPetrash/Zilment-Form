@@ -305,7 +305,7 @@ function monthlyFeesTsys () {
 function annualSavingsTsys () {
 	var card_value = document.querySelector('input[name="radio-cards"]:checked').value;
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
-	var fourth_field = document.querySelector('#fourth-field').value;
+	var fourth_field = document.querySelector('#field-fourth').value;
 	var fees_tsys = document.querySelector('.tsys_fees').textContent;
 	var feesTsys_matches = fees_tsys.match(/(\d+)/);
 	var feesTsys_num = parseInt(feesTsys_matches);
