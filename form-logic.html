@@ -151,7 +151,7 @@ function changeDebitChoice (value) {
 	//get markup value
 function getMarkupValue () {
 	if(document.querySelector('#markup_value')) {
-	document.querySelectorAll('#markup_value').forEach((elem) => 
+	document.querySelectorAll('#markup_value').forEach((elem) => {
 	elem.addEventListener("change", () => {changeMarkupValue(event.target.value)});
 	});
 	}
@@ -162,7 +162,7 @@ function changeMarkupValue (value) {
 	//get monthly value
 function getMonthlyValue () {
 	if(document.querySelector('#monthly_value')) {
-	document.querySelectoeAll('#monthly_value').forEach((elem) => 
+	document.querySelectoeAll('#monthly_value').forEach((elem) => {
 	elem.addEventListener("change", () => {changeMonthlyValue(event.target.value)});
 	});
 	}
@@ -173,7 +173,7 @@ function changeMonthlyValue (value) {
 	//get field third
 function getFieldThird () {
 	if(document.querySelector('#field-third')) {
-	document.querySelectorAll('#field-third').forEach((elem) =>
+	document.querySelectorAll('#field-third').forEach((elem) => {
 	elem.addEventListener("change", () => {changeFieldThird(event.target.value)});
 	});
 	}
