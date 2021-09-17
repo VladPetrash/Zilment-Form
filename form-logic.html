@@ -377,7 +377,7 @@ function getPaysafe () {
 	
 	
 	
-	<!-- EFFECTIVE RATE TSYS -->
+	<!-- EFFECTIVE RATE CLEARENT -->
 function effectiveRateClearent () {
 		var specific_value = document.querySelector('input[name="specific-brands"]:checked').value;
 		changeSpecificBrands(specific_value);
@@ -413,7 +413,7 @@ function effectiveRateClearent () {
 	}
 }
 }
-		<!-- MONTHLY FEES TSYS -->
+		<!-- MONTHLY FEES CLEARENT -->
 function monthlyFeesClearent () {
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
 	changePricingModel(pricing_value);
@@ -431,12 +431,12 @@ function monthlyFeesClearent () {
 	}
 }
 	
-		<!-- ANNUAL SAVINGS TSYS -->
+		<!-- ANNUAL SAVINGS CLEARENT -->
 function annualSavingsClearent () {
 	var card_value = document.querySelector('input[name="radio-cards"]:checked').value;
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
 	var fourth_field = document.querySelector('#field-fourth').value;
-	var fees_tsys = document.querySelector('.clearent_saving').textContent;
+	var fees_tsys = document.querySelector('.clearent_fees').textContent;
 	var feesTsys_matches = fees_tsys.match(/(\d+)/);
 	var feesTsys_num = parseInt(feesTsys_matches);
 	var fourthField_num = parseFloat(fourth_field);
@@ -445,6 +445,111 @@ function annualSavingsClearent () {
 	}
 	else{
 		document.querySelector(".clearent_saving").textContent = "$" + ((fourthField_num - feesTsys_num) * 12).toFixed(0);
+	}
+	
+}
+	
+	
+	
+	
+		<!-- EFFECTIVE RATE PAYSAFE -->
+function effectiveRatePaysafe_1 () {
+	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
+	changePricingModel(pricing_value);
+	if(document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked) {
+	document.querySelector('.safe_rate').textContent = "N/A";
+	}
+	else{
+		var specific_value = document.querySelector('input[name="specific-brands"]:checked').value;
+		changeSpecificBrands(specific_value);
+		if(document.getElementById('brands-radio-standart').checked || document.getElementById('brands-radio-vital').checked || document.getElementById('brands-radio-recommends').checked || document.getElementById('brands-radio-other').checked) {
+		document.querySelector('.safe_rate').textContent = "N/A";
+		}
+		else{
+			var types_value = document.querySelector('input[name="types-choice"]:checked').value;
+			changeTypesChoice(types_value);
+			if(document.getElementById('types-radio-yes').checked) {
+				var request_value = document.querySelector('input[name="request-choice"]:checked').value;
+				changeRequestChoice(request_value);
+				if(document.getElementById('req-radio-yes').checked) {
+					var online_value = document.querySelector('input[name="online-choice"]:checked').value;
+					changeOnlineChoice(online_value);
+					if(document.getElementById('pay-radio-yes').checked){
+					document.querySelector('.safe_rate').textContent = "N/A";
+					}
+					else{
+						effectiveRatePaysafe_2();
+					}
+				}
+				else{
+					effectiveRatePaysafe_2();
+				}
+			}
+			else {
+				effectiveRatePaysafe_2();
+			}
+		}
+	}
+}
+function effectiveRatePaysafe_2 () {
+	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
+	changePricingModel(pricing_value);
+	if(document.getElementById('flat-rate').checked) {
+	document.querySelector('.safe_rate').textContent = "2.5%";
+	}
+	else{
+		var debit_value = document.querySelector('input[name="debit-choice"]:checked').value;
+		var markup_value = document.querySelector("#safe-markup").textContent;
+		var monthly_value = document.querySelector("#safe-monthly").textContent;
+		var field_value = document.querySelector('#field-third').value;
+		console.log(debit_value);
+		console.log(markup_value);
+		console.log(monthly_value);
+		console.log(field_value);
+		var markup_num = parseFloat(markup_value);
+		var monthly_matches = monthly_value.match(/(\d+)/);
+		var monthly_num = parseInt(monthly_matches);
+		var field_matches = field_value.match(/(\d+)/);
+		var field_num = parseInt(field_matches);
+		if(document.getElementById('types-radio-no-new').checked) {
+		document.querySelector('.safe_rate').textContent = (((0.0175 + (markup_num / 100)) + (monthly_num / field_num)) * 100).toFixed(2) + "%";
+		}
+		else{
+		document.querySelector('.safe_rate').textContent = (((0.0135 + (markup_num / 100)) + (monthly_num / field_num)) * 100).toFixed(2) + "%";	
+		}
+	}
+}
+	<!-- MONTHLY FEES PAYSAFE -->
+function monthlyFeesTsys () {
+	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
+	changePricingModel(pricing_value);
+	var rateTsys = document.querySelector(".safe_rate").textContent;
+	var fieldTsys = document.querySelector('#field-third').value;
+	var rateTsys_num = parseFloat(rateTsys);
+	var fieldTsys_num = parseInt(fieldTsys);
+	console.log(rateTsys_num);
+	console.log(fieldTsys_num);
+	if(document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked) {
+	document.querySelector('.safe_fees').textContent = "N/A";
+	}
+	else {
+	document.querySelector(".safe_fees").textContent = "$" + (((rateTsys_num * fieldTsys_num)) / 100).toFixed(0);
+	}
+}
+	<!-- ANNUAL SAVINGS PAYSAFE -->
+function annualSavingsTsys () {
+	var card_value = document.querySelector('input[name="radio-cards"]:checked').value;
+	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
+	var fourth_field = document.querySelector('#field-fourth').value;
+	var fees_tsys = document.querySelector('.safe_fees').textContent;
+	var feesTsys_matches = fees_tsys.match(/(\d+)/);
+	var feesTsys_num = parseInt(feesTsys_matches);
+	var fourthField_num = parseFloat(fourth_field);
+	if(document.getElementById('radio-cards-no').checked || document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked) {
+	document.querySelector(".safe_saving").textContent = "N/A";
+	}
+	else{
+		document.querySelector(".safe_saving").textContent = "$" + ((fourthField_num - feesTsys_num) * 12).toFixed(0);
 	}
 	
 }
