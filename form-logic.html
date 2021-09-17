@@ -330,7 +330,8 @@ function acceptCards () {
 	}
 }
 function getPaysafe () {
-	document.getElementById('pay-rate').textContent = document.getElementById('fees-rate').textContent
+	var tsysRate = document.getElementById('tsys-rate').textContent;
+	document.getElementById('pay-rate').textContent = tsysRate;
 }
 </script>
 </body>
