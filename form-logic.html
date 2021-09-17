@@ -331,7 +331,11 @@ function acceptCards () {
 }
 function getPaysafe () {
 	var tsysRate = document.getElementById('tsys-rate').textContent;
+	var tsysFees = document.getElementById('tsys-fees').textContent;
+	var tsysSaving = document.getElementById('tsys-saving').textContent;
 	document.getElementById('pay-rate').textContent = tsysRate;
+	document.getElementById('pay-fees').textContent = tsysFees;
+	document.getElementById('pay-saving').textContent = tsysSaving;
 }
 </script>
 </body>
