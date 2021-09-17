@@ -325,9 +325,13 @@ function getPaysafe () {
 	var tsysFees = document.getElementById('tsys-fees').textContent;
 	var tsysSaving = document.getElementById('tsys-saving').textContent;
 	var tsysModel = document.getElementById('tsys-model').textContent;
+	var tsysMarkup = document.querySelector('.markup-text').textContent;
+	var tsysAmex = document.querySelector('.amex').textContent;
 	document.getElementById('pay-rate').textContent = tsysRate;
 	document.getElementById('pay-fees').textContent = tsysFees;
 	document.getElementById('pay-saving').textContent = tsysSaving;
+	document.querySelector('.pay-markup').textContent = tsysMarkup;
+	document.querySelector('.pay-amex').textContent = tsysMarkup;
 	let allPricingModel = document.querySelectorAll( ".body-2 .pricing-model" );
 	  for( let i = 0; i < allPricingModel.length; i++){
 	    allPricingModel[i].textContent = tsysModel;
