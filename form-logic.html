@@ -14,26 +14,32 @@ function getValue () {
 	var card_volume = value;
 	var markup_text = document.querySelector('.markup-text').textContent;
 	var amex = document.querySelector('.amex').textContent;
+	var amexCloud = document.querySelector('.cloud-amex').textContent;
 	var x = 20000;
 	var y = 70000;
 	var markup_1 = 0.2;
 	var markup_2 = 0.15;
 	var markup_3 = 0.1;
 	var coef = 0.1;
+	var coefCloud = 0.35;
 	var markup_value = markup_1 + coef;
+	var markup_value_2 = markup_1 + coefCloud;
        		if (card_volume < x) {
        			document.querySelector('.markup-text').textContent = markup_1 + "%";
-       			document.querySelector('.amex').textContent = markup_value.toFixed(1) + "%";          
+       			document.querySelector('.amex').textContent = markup_value.toFixed(1) + "%";
+			document.querySelector('.cloud-amex').textContent = markup_value_2.toFixed(1) + "%";           
 			return false;
        			}
         	if (card_volume < y) {
         		document.querySelector('.markup-text').textContent = markup_2 + "%";
           		document.querySelector('.amex').textContent = markup_2 + coef + "%";
+			document.querySelector('.cloud-amex').textContent = markup_2 + coefCloud + "%";
        			return false;
         		}
         	else {
         		document.querySelector('.markup-text').textContent = markup_3 + "%";
           		document.querySelector('.amex').textContent = markup_3 + coef + "%";
+			document.querySelector('.cloud-amex').textContent = markup_3 + coefCloud + "%";
        			return false;
         		}
 	}
@@ -52,28 +58,40 @@ if (document.querySelector('input[name="pricing-model"]')) {
 			changeValue(value);
 			document.querySelector('.swipe-fee').textContent = "0.05%";
 			document.querySelector('.monthly-fee').textContent = "$15,00";
+			document.querySelector('.clearent-monthly').textContent = "$20,00";
 			document.querySelector('.compliance').textContent = "$14.99";
+			document.querySelector('.cloud-compliance').textContent = "$49.99";
+			document.querySelector('.clearent-compliance').textContent = "$34.99";
 			}
 	        if(document.getElementById('flat-rate').checked) {
 			document.querySelector('.markup-text').textContent = "N/A";
           		document.querySelector('.amex').textContent = "N/A";
 			document.querySelector('.swipe-fee').textContent = "0.05%";
 			document.querySelector('.monthly-fee').textContent = "$0,00";
+			document.querySelector('.clearent-monthly').textContent = "$0,00";
 			document.querySelector('.compliance').textContent = "$0.00";
+			document.querySelector('.cloud-compliance').textContent = "$0.00";
+			document.querySelector('.clearent-compliance').textContent = "$0.00";
     			}
 	        if(document.getElementById('tiered').checked) {
 			document.querySelector('.markup-text').textContent = "N/A";
           		document.querySelector('.amex').textContent = "N/A";
 			document.querySelector('.swipe-fee').textContent = "N/A";
 			document.querySelector('.monthly-fee').textContent = "$15,00";
+			document.querySelector('.clearent-monthly').textContent = "$20,00";
 			document.querySelector('.compliance').textContent = "$14.99";
+			document.querySelector('.cloud-compliance').textContent = "$49.99";
+			document.querySelector('.clearent-compliance').textContent = "$34.99";
     			}
 	        if(document.getElementById('cash-discount-surcharge').checked) {
 			document.querySelector('.markup-text').textContent = "N/A";
           		document.querySelector('.amex').textContent = "N/A";
 			document.querySelector('.swipe-fee').textContent = "N/A";
 			document.querySelector('.monthly-fee').textContent = "$15,00";
+			document.querySelector('.clearent-monthly').textContent = "$20,00";
 			document.querySelector('.compliance').textContent = "$14.99";
+			document.querySelector('.cloud-compliance').textContent = "$49.99";
+			document.querySelector('.clearent-compliance').textContent = "$34.99";
     			}	
     });
   });
@@ -338,7 +356,15 @@ function getPaysafe () {
 	document.getElementById('safe-amex').textContent = tsysAmex;
 	document.getElementById('safe-swipe').textContent = tsysSwipe;	
 	document.getElementById('safe-monthly').textContent = tsysMonthly;
-	document.getElementById('safe-compliance').textContent = tsysCompliance;		
+	document.getElementById('safe-compliance').textContent = tsysCompliance;
+	document.getElementById('cloud-model').textContent = tsysModel;
+	document.getElementById('cloud-markup').textContent = tsysMarkup;
+	document.getElementById('cloud-markup').textContent = tsysMarkup;
+	document.getElementById('cloud-monthly').textContent = tsysMonthly;
+	document.getElementById('clearent-model').textContent = tsysModel;
+	document.getElementById('clearent-markup').textContent = tsysMarkup;
+	document.getElementById('clearent-amex').textContent = tsysMarkup;
+	document.getElementById('clearent-swipe').textContent = tsysSwipe;
 }
 </script>
 </body>
