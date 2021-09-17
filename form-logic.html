@@ -417,7 +417,7 @@ function effectiveRateClearent () {
 function monthlyFeesClearent () {
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
 	changePricingModel(pricing_value);
-	var rateTsys = document.querySelector(".clearent_fees").textContent;
+	var rateTsys = document.querySelector(".clearent_rate").textContent;
 	var fieldTsys = document.querySelector('#field-third').value;
 	var rateTsys_num = parseFloat(rateTsys);
 	var fieldTsys_num = parseInt(fieldTsys);
