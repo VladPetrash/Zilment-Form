@@ -236,7 +236,9 @@ document.getElementById("submit-btn").onclick = function () {
 	effectiveRateClearent ();
 	monthlyFeesClearent ();
 	annualSavingsClearent ();
-
+	effectiveRatePaysafe_1 ();
+	monthlyFeesPaysafe ();
+	annualSavingsPaysafe ();
 };
 
 	<!-- EFFECTIVE RATE TSYS -->
@@ -520,7 +522,7 @@ function effectiveRatePaysafe_2 () {
 	}
 }
 	<!-- MONTHLY FEES PAYSAFE -->
-function monthlyFeesTsys () {
+function monthlyFeesPaysafe () {
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
 	changePricingModel(pricing_value);
 	var rateTsys = document.querySelector(".safe_rate").textContent;
@@ -537,7 +539,7 @@ function monthlyFeesTsys () {
 	}
 }
 	<!-- ANNUAL SAVINGS PAYSAFE -->
-function annualSavingsTsys () {
+function annualSavingsPaysafe () {
 	var card_value = document.querySelector('input[name="radio-cards"]:checked').value;
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
 	var fourth_field = document.querySelector('#field-fourth').value;
