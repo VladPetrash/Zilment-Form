@@ -215,6 +215,7 @@ document.getElementById("submit-btn").onclick = function () {
 	effectiveRateTsys_1 ();
 	monthlyFeesTsys ();
 	annualSavingsTsys ();
+	getPaysafe ();
 
 };
 
@@ -327,6 +328,9 @@ function acceptCards () {
 	document.querySelector('.tsys_fees').textContent = "N/A";
 	document.querySelector(".tsys_saving").textContent = "N/A";
 	}
+}
+function getPaysafe () {
+	document.getElementById('pay-rate').textContent = document.getElementById('fees-rate').textContent
 }
 </script>
 </body>
