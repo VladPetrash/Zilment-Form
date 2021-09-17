@@ -235,7 +235,7 @@ document.getElementById("submit-btn").onclick = function () {
 	getPaysafe ();
 	effectiveRateClearent ();
 	monthlyFeesClearent ();
-	annualSavingsTsys ();
+	annualSavingsClearent ();
 
 };
 
@@ -432,7 +432,7 @@ function monthlyFeesClearent () {
 }
 	
 		<!-- ANNUAL SAVINGS TSYS -->
-function annualSavingsTsys () {
+function annualSavingsClearent () {
 	var card_value = document.querySelector('input[name="radio-cards"]:checked').value;
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
 	var fourth_field = document.querySelector('#field-fourth').value;
