@@ -327,15 +327,18 @@ function getPaysafe () {
 	var tsysModel = document.getElementById('tsys-model').textContent;
 	var tsysMarkup = document.querySelector('.markup-text').textContent;
 	var tsysAmex = document.querySelector('.amex').textContent;
+	var tsysSwipe = document.querySelector('.swipe-fee').textContent;
+	var tsysMonthly = document.querySelector('.monthly-fee').textContent;
+	var tsysCompliance = document.querySelector('.compliance').textContent;
 	document.getElementById('pay-rate').textContent = tsysRate;
 	document.getElementById('pay-fees').textContent = tsysFees;
 	document.getElementById('pay-saving').textContent = tsysSaving;
-	document.querySelector('.pay-markup').textContent = tsysMarkup;
-	document.querySelector('.pay-amex').textContent = tsysMarkup;
-	let allPricingModel = document.querySelectorAll( ".body-2 .pricing-model" );
-	  for( let i = 0; i < allPricingModel.length; i++){
-	    allPricingModel[i].textContent = tsysModel;
-	  }	
+	document.querySelector('.safe-model').textContent = tsysModel;
+	document.querySelector('.safe-markup').textContent = tsysMarkup;
+	document.querySelector('.safe-amex').textContent = tsysAmex;
+	document.querySelector('.safe-swipe').textContent = tsysSwipe;	
+	document.querySelector('.safe-monthly').textContent = tsysMonthly;
+	document.querySelector('.safe-compliance').textContent = tsysCompliance;		
 }
 </script>
 </body>
