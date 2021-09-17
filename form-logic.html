@@ -337,7 +337,10 @@ function getPaysafe () {
 	document.getElementById('pay-rate').textContent = tsysRate;
 	document.getElementById('pay-fees').textContent = tsysFees;
 	document.getElementById('pay-saving').textContent = tsysSaving;
-	document.querySelectorAll('#pay-model, #cloud-model, #clearent-model').textContent = tsysModel;
+	let allPricingModel = document.querySelectorAll( ".pricing-model" );
+	  for( let i = 0; i < allPricingModel.length; i++){
+	    allPricingModel[i].textContent = tsysModel;
+	  }	
 }
 </script>
 </body>
