@@ -32,13 +32,13 @@ function getValue () {
        			}
         	if (card_volume < y) {
         		document.querySelector('.markup-text').textContent = markup_2 + "%";
-          		document.querySelector('.amex').textContent = markup_2 + coef + "%";
+          		document.querySelector('.amex').textContent = (markup_2 + coef).toFixed(1) + "%";
 			document.querySelector('.cloud-amex').textContent = markup_2 + coefCloud + "%";
        			return false;
         		}
         	else {
         		document.querySelector('.markup-text').textContent = markup_3 + "%";
-          		document.querySelector('.amex').textContent = markup_3 + coef + "%";
+          		document.querySelector('.amex').textContent = (markup_3 + coef).toFixed(1) + "%";
 			document.querySelector('.cloud-amex').textContent = markup_3 + coefCloud + "%";
        			return false;
         		}
