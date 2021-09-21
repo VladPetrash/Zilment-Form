@@ -383,6 +383,12 @@ function getPaysafe () {
 	
 	<!-- EFFECTIVE RATE CLEARENT -->
 function effectiveRateClearent () {
+	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
+	changePricingModel(pricing_value);
+	if(document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked) {
+	document.querySelector('.clearent_rate').textContent = "N/A";
+	}
+	else{
 		var specific_value = document.querySelector('input[name="specific-brands"]:checked').value;
 		changeSpecificBrands(specific_value);
 		if(document.getElementById('brands-radio-clover').checked) {
@@ -415,6 +421,7 @@ function effectiveRateClearent () {
 		document.querySelector('.clearent_rate').textContent = (((0.0135 + (markup_num / 100)) + (monthly_num / field_num)) * 100).toFixed(2) + "%";	
 		}
 	}
+}
 }
 }
 		<!-- MONTHLY FEES CLEARENT -->
