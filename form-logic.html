@@ -26,20 +26,20 @@ function getValue () {
 	var markup_value_2 = markup_1 + coefCloud;
        		if (card_volume < x) {
        			document.querySelector('.markup-text').textContent = markup_1 + "%";
-       			document.querySelector('.amex').textContent = markup_value.toFixed(1) + "%";
-			document.querySelector('.cloud-amex').textContent = markup_value_2.toFixed(1) + "%";           
+       			document.querySelector('.amex').textContent = markup_value.toFixed(2) + "%";
+			document.querySelector('.cloud-amex').textContent = markup_value_2.toFixed(2) + "%";           
 			return false;
        			}
         	if (card_volume < y) {
         		document.querySelector('.markup-text').textContent = markup_2 + "%";
-          		document.querySelector('.amex').textContent = (markup_2 + coef).toFixed(1) + "%";
-			document.querySelector('.cloud-amex').textContent = (markup_2 + coefCloud).toFixed(1) + "%";
+          		document.querySelector('.amex').textContent = (markup_2 + coef).toFixed(2) + "%";
+			document.querySelector('.cloud-amex').textContent = (markup_2 + coefCloud).toFixed(2) + "%";
        			return false;
         		}
         	else {
         		document.querySelector('.markup-text').textContent = markup_3 + "%";
-          		document.querySelector('.amex').textContent = (markup_3 + coef).toFixed(1) + "%";
-			document.querySelector('.cloud-amex').textContent = (markup_3 + coefCloud).toFixed(1) + "%";
+          		document.querySelector('.amex').textContent = (markup_3 + coef).toFixed(2) + "%";
+			document.querySelector('.cloud-amex').textContent = (markup_3 + coefCloud).toFixed(2) + "%";
        			return false;
         		}
 	}
