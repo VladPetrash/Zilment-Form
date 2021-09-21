@@ -465,9 +465,6 @@ function effectiveRatePaysafe_1 () {
 		var specific_value = document.querySelector('input[name="specific-brands"]:checked').value;
 		changeSpecificBrands(specific_value);
 		if(document.getElementById('brands-radio-standart').checked || document.getElementById('brands-radio-vital').checked || document.getElementById('brands-radio-recommends').checked || document.getElementById('brands-radio-other').checked) {
-		document.querySelector('.safe_rate').textContent = "N/A";
-		}
-		else{
 			var types_value = document.querySelector('input[name="types-choice"]:checked').value;
 			changeTypesChoice(types_value);
 			if(document.getElementById('types-radio-no').checked) {
