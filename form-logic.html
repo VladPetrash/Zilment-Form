@@ -356,7 +356,7 @@ function changeCardChoice (value) {
 }
 	
 	<!-- saving when -->
-function savingCheck () {
+	function savingCheck () {
 	var field_value = document.querySelector('#field-third').value;
 	var field_v_m = field_value.match(/\d+/g);
 	var i=0;
@@ -374,7 +374,28 @@ function savingCheck () {
 	document.querySelector(".clearent_saving").textContent = "N/A"
 	}
 
+} 
+	
+	<!-- saving check -->
+function savingCheckNew () {
+	const tsys = document.querySelector(".tsys_saving").textContent;
+	const safe = document.querySelector(".safe_saving").textContent;
+	const pay = document.querySelector(".pay_saving").textContent;
+	const clearent = document.querySelector(".clearent_saving").textContent;
+	if(tsys.includes('-')) {
+	document.querySelector(".tsys_saving").textContent = "N/A"
+	}
+	if(safe.includes('-')) {
+	document.querySelector(".safe_saving").textContent = "N/A"
+	}
+	if(pay.includes('-')) {
+	document.querySelector(".pay_saving").textContent = "N/A"
+	}
+	if(clearent.includes('-')) {
+	document.querySelector(".clearent_saving").textContent = "N/A"
+	}
 }
+	
 <!-- trigger -->
 document.getElementById("submit-btn").onclick = function () {
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
@@ -416,7 +437,8 @@ document.getElementById("submit-btn").onclick = function () {
 	effectiveRatePaysafe_1 ();
 	monthlyFeesPaysafe ();
 	annualSavingsPaysafe ();
-	savingCheck ();
+	savingCheckNew ();
+	
 };
 	<!-- 5slide input value -->
 if (document.querySelector('#field-third')) {
