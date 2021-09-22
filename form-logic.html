@@ -445,7 +445,8 @@ function monthlyFeesClearent () {
 	document.querySelector('.clearent_fees').textContent = "N/A";
 	}
 	else {
-	document.querySelector(".clearent_fees").textContent = "$" + (((rateTsys_num * fieldTsys_num)) / 100).toFixed(0);
+	var stringClearentFees = (((rateTsys_num * fieldTsys_num)) / 100).toFixed(0);
+	document.querySelector(".clearent_fees").textContent = "$" + (separate(stringClearentFees));
 	}
 }
 	
@@ -462,7 +463,8 @@ function annualSavingsClearent () {
 	document.querySelector(".clearent_saving").textContent = "N/A";
 	}
 	else{
-		document.querySelector(".clearent_saving").textContent = "$" + ((fourthField_num - feesTsys_num) * 12).toFixed(0);
+	var stringClearentSaving = ((fourthField_num - feesTsys_num) * 12).toFixed(0);
+	document.querySelector(".clearent_saving").textContent = "$" + separate(stringClearentSaving);
 	}
 	
 }
@@ -551,7 +553,8 @@ function monthlyFeesPaysafe () {
 	document.querySelector('.safe_fees').textContent = "N/A";
 	}
 	else {
-	document.querySelector(".safe_fees").textContent = "$" + (((rateTsys_num * fieldTsys_num)) / 100).toFixed(0);
+	var stringPayFees = (((rateTsys_num * fieldTsys_num)) / 100).toFixed(0);
+	document.querySelector(".safe_fees").textContent = "$" + (separate(stringPayFees));
 	}
 }
 	<!-- ANNUAL SAVINGS PAYSAFE -->
@@ -567,7 +570,8 @@ function annualSavingsPaysafe () {
 	document.querySelector(".safe_saving").textContent = "N/A";
 	}
 	else{
-		document.querySelector(".safe_saving").textContent = "$" + ((fourthField_num - feesTsys_num) * 12).toFixed(0);
+	var stringPaySaving = ((fourthField_num - feesTsys_num) * 12).toFixed(0);
+	document.querySelector(".safe_saving").textContent = "$" + (separate(stringPaySaving));
 	}
 	
 }
