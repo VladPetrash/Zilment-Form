@@ -242,7 +242,12 @@ document.getElementById("submit-btn").onclick = function () {
 	monthlyFeesPaysafe ();
 	annualSavingsPaysafe ();
 };
-
+	<!-- ADD COMMAS -->
+function separator(numb) {
+    var str = numb.toString().split(".");
+    str[0] = str[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return str.join(".");
+}
 	<!-- EFFECTIVE RATE TSYS -->
 function effectiveRateTsys_1 () {
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
@@ -325,7 +330,7 @@ function monthlyFeesTsys () {
 	}
 	else {
 	var stringTsysFees = (((rateTsys_num * fieldTsys_num)) / 100).toFixed(0);
-	document.querySelector(".tsys_fees").textContent = "$" + (stringTsysFees.toLocaleString('de-DE'));
+	document.querySelector(".tsys_fees").textContent = "$" + (separator(stringTsysFees));
 	}
 }
 	<!-- ANNUAL SAVINGS TSYS -->
@@ -342,7 +347,7 @@ function annualSavingsTsys () {
 	}
 	else{
 	var stringTsysSaving = ((fourthField_num - feesTsys_num) * 12).toFixed(0);
-	document.querySelector(".tsys_saving").textContent = "$" + (stringTsysSaving.toLocaleString('de-DE'));
+	document.querySelector(".tsys_saving").textContent = "$" + (separator(stringTsysSaving));
 	}
 	
 }
