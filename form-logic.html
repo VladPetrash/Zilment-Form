@@ -469,7 +469,8 @@ function annualSavingsClearent () {
 	var fees_tsys = document.querySelector('.clearent_fees').textContent;
 	var feesTsys_matches = fees_tsys.match(/(\d+)/);
 	var feesTsys_num = parseInt(feesTsys_matches);
-	var fourthField_num = parseFloat(fourth_field);
+	var fourth_field_matches = fourth_field.match(/\d+/g);
+	var fourthField_num = parseFloat(fourth_field_matches);
 	if(document.getElementById('radio-cards-no').checked || document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked || document.getElementById('brands-radio-clover').checked) {
 	document.querySelector(".clearent_saving").textContent = "N/A";
 	}
