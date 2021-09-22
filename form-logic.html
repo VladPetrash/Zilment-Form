@@ -446,7 +446,7 @@ function monthlyFeesClearent () {
 	}
 	else {
 	var stringClearentFees = (((rateTsys_num * fieldTsys_num)) / 100).toFixed(0);
-	document.querySelector(".clearent_fees").textContent = "$" + (separate(stringClearentFees));
+	document.querySelector(".clearent_fees").textContent = "$" + (separator(stringClearentFees));
 	}
 }
 	
@@ -464,7 +464,7 @@ function annualSavingsClearent () {
 	}
 	else{
 	var stringClearentSaving = ((fourthField_num - feesTsys_num) * 12).toFixed(0);
-	document.querySelector(".clearent_saving").textContent = "$" + separate(stringClearentSaving);
+	document.querySelector(".clearent_saving").textContent = "$" + separator(stringClearentSaving);
 	}
 	
 }
@@ -554,7 +554,7 @@ function monthlyFeesPaysafe () {
 	}
 	else {
 	var stringPayFees = (((rateTsys_num * fieldTsys_num)) / 100).toFixed(0);
-	document.querySelector(".safe_fees").textContent = "$" + (separate(stringPayFees));
+	document.querySelector(".safe_fees").textContent = "$" + (separator(stringPayFees));
 	}
 }
 	<!-- ANNUAL SAVINGS PAYSAFE -->
@@ -571,7 +571,7 @@ function annualSavingsPaysafe () {
 	}
 	else{
 	var stringPaySaving = ((fourthField_num - feesTsys_num) * 12).toFixed(0);
-	document.querySelector(".safe_saving").textContent = "$" + (separate(stringPaySaving));
+	document.querySelector(".safe_saving").textContent = "$" + (separator(stringPaySaving));
 	}
 	
 }
