@@ -651,10 +651,14 @@ function effectiveRateClearent () {
 		var field_num_1 = field_matches[0] + field_matches[1] + field_matches[2] + field_matches[3] + field_matches[4] + field_matches[5];
    		var field_num = parseFloat(field_num_1);
 		if(document.getElementById('types-radio-no-new').checked) {
-		document.querySelector('.clearent_rate').textContent = (((0.0175 + (markup_num / 100)) + (monthly_num / field_num)) * 100).toFixed(2) + "%";
+		document.querySelector('.clearent_rate_new').textContent = ((0.0175 + (markup_num / 100)) + (monthly_num / field_num)) * 100;
+		var clearentRate = (((0.0175 + (markup_num / 100)) + (monthly_num / field_num)) * 100).toFixed(2) + "%";
+		document.querySelector('.clearent_rate').textContent = clearentRate;
 		}
 		else{
-		document.querySelector('.clearent_rate').textContent = (((0.0135 + (markup_num / 100)) + (monthly_num / field_num)) * 100).toFixed(2) + "%";	
+		document.querySelector('.clearent_rate').textContent = (((0.0135 + (markup_num / 100)) + (monthly_num / field_num)) * 100).toFixed(2) + "%";
+		var clearentRate = (((0.0135 + (markup_num / 100)) + (monthly_num / field_num)) * 100).toFixed(2) + "%";
+		document.querySelector('.clearent_rate').textContent = clearentRate;
 		}
 	}
 }
@@ -668,7 +672,7 @@ function monthlyFeesClearent () {
 	else {
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
 	changePricingModel(pricing_value);
-	var rateTsys = document.querySelector(".clearent_rate").textContent;
+	var rateTsys = document.querySelector(".clearent_rate_new").textContent;
 	var fieldTsys = document.querySelector('#field-third').value;
 	var rateTsys_num = parseFloat(rateTsys);
 	var field_matches = fieldTsys.match(/\d+/g);
@@ -771,10 +775,14 @@ function effectiveRatePaysafe_2 () {
 		var field_m = field_matches[0] + field_matches[1] + field_matches[2] + field_matches[3] + field_matches[4] + field_matches[5];
 		var field_num = parseInt(field_m);
 		if(document.getElementById('types-radio-no-new').checked) {
-		document.querySelector('.safe_rate').textContent = (((0.0175 + (markup_num / 100)) + (monthly_num / field_num)) * 100).toFixed(2) + "%";
+		document.querySelector('.safe_rate_new').textContent = ((0.0175 + (markup_num / 100)) + (monthly_num / field_num)) * 100;
+		var safeRate = (((0.0175 + (markup_num / 100)) + (monthly_num / field_num)) * 100).toFixed(2) + "%";
+		document.querySelector('.safe_rate').textContent = safeRate;
 		}
 		else{
-		document.querySelector('.safe_rate').textContent = (((0.0135 + (markup_num / 100)) + (monthly_num / field_num)) * 100).toFixed(2) + "%";	
+		document.querySelector('.safe_rate_new').textContent = ((0.0135 + (markup_num / 100)) + (monthly_num / field_num)) * 100;
+		var safeRate = (((0.0135 + (markup_num / 100)) + (monthly_num / field_num)) * 100).toFixed(2) + "%";
+		document.querySelector('.safe_rate').textContent = safeRate;	
 		}
 	}
 }
@@ -786,7 +794,7 @@ function monthlyFeesPaysafe () {
 	else {
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
 	changePricingModel(pricing_value);
-	var rateTsys = document.querySelector(".safe_rate").textContent;
+	var rateTsys = document.querySelector(".safe_rate_new").textContent;
 	var rateTsys_num = parseFloat(rateTsys);
 	var fieldTsys = document.querySelector('#field-third').value;
 	var fieldTsys_matches = fieldTsys.match(/\d+/g);
