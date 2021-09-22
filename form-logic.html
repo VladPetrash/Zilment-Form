@@ -335,7 +335,10 @@ function monthlyFeesTsys () {
 	var rateTsys = document.querySelector(".tsys_rate").textContent;
 	var fieldTsys = document.querySelector('#field-third').value;
 	var rateTsys_num = parseFloat(rateTsys);
-	var fieldTsys_num = parseInt(fieldTsys);
+	var field_matches = fieldTsys.match(/\d+/g);
+	var i=0;
+	var field_num_1 = field_matches[0] + field_matches[1] + field_matches[2];
+	var fieldTsys_num = parseInt(field_num_1);
 	console.log(rateTsys_num);
 	console.log(fieldTsys_num);
 	if(document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked || document.getElementById('brands-radio-clover').checked || document.getElementById('types-radio-yes').checked || document.getElementById('req-radio-yes').checked || document.getElementById('pay-radio-yes').checked) {
