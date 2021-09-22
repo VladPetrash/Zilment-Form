@@ -248,6 +248,8 @@ if (document.querySelector('#field-third')) {
   	 card_vol.addEventListener("change", function(event) {
      var card_volume = event.target.value;
 	document.getElementById('field-fourth').value = (card_volume * 0.03);
+	 var field_4Req = document.getElementById('error-fourth');
+    	 field_4Req.style.display = "none";
 	 });
 	});
 }
