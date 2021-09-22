@@ -127,30 +127,6 @@ $(".submit-click").click(()=> {
 $("#submit").trigger("click");
 });
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/12.0.0/nouislider.min.js" integrity="sha512-6vo59lZMHB6GgEySnojEnfhnugP7LR4qm6akxptNOw/KW+i9o9MK4Gaia8f/eJATjAzCkgN3CWlIHWbVi2twpg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.2.0/wNumb.min.js" integrity="sha512-igVQ7hyQVijOUlfg3OmcTZLwYJIBXU63xL9RC12xBHNpmGJAktDnzl9Iw0J4yrSaQtDxTTVlwhY730vphoVqJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script>
-var slider = document.getElementById('slider');
-
-noUiSlider.create(slider, {
-    start: [50],
-    connect: true,
-     tooltips: [wNumb({
-	               decimals: 0,
-                 suffix: '%'
-                })],
-    range: {
-        'min': 1,
-        'max': 100
-    }
-});
-slider.noUiSlider.on('update', function () {
-let [fromValue, toValue] = slider.noUiSlider.get();
-$("#from").val(fromValue + "k");
-$("#to").val(toValue + "k");
-});
-</script>
-
 <script>
 $( "#to-five-step" ).on( "click", function() {
 let bullets = $('#step-slider-nav').children();
