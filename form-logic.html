@@ -523,10 +523,14 @@ function effectiveRateTsys_2 () {
 		var field_num_1 = field_matches[0] + field_matches[1] + field_matches[2] + field_matches[3] + field_matches[4] + field_matches[5];
 		var field_num = parseInt(field_num_1);
 		if(document.getElementById('types-radio-no-new').checked) {
-		document.querySelector('.tsys_rate').textContent = (((0.0175 + (markup_num / 100)) + (monthly_num / field_num)) * 100).toFixed(2) + "%";
+		document.querySelector('.tsys_rate_new').textContent = ((0.0175 + (markup_num / 100)) + (monthly_num / field_num)) * 100;
+		var tsys_rate = (((0.0175 + (markup_num / 100)) + (monthly_num / field_num)) * 100).toFixed(2) + "%";
+		document.querySelector('.tsys_rate').textContent = tsys_rate;
 		}
 		else{
-		document.querySelector('.tsys_rate').textContent = (((0.0135 + (markup_num / 100)) + (monthly_num / field_num)) * 100).toFixed(2) + "%";	
+		document.querySelector('.tsys_rate_new').textContent = ((0.0135 + (markup_num / 100)) + (monthly_num / field_num)) * 100;
+		var tsys_rate = (((0.0135 + (markup_num / 100)) + (monthly_num / field_num)) * 100).toFixed(2) + "%";
+		document.querySelector('.tsys_rate').textContent = tsys_rate;	
 		}
 	}
 }
@@ -538,7 +542,7 @@ function monthlyFeesTsys () {
 	else {
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
 	changePricingModel(pricing_value);
-	var rateTsys = document.querySelector(".tsys_rate").textContent;
+	var rateTsys = document.querySelector(".tsys_rate_new").textContent;
 	var rateTsys_num = parseFloat(rateTsys);
 	var fieldTsys = document.querySelector('#field-third').value;
 	var field_matches = fieldTsys.match(/\d+/g);
