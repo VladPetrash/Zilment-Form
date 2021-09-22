@@ -514,8 +514,7 @@ function monthlyFeesTsys () {
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
 	changePricingModel(pricing_value);
 	var rateTsys = document.querySelector(".tsys_rate").textContent;
-	var rateTsys_num = parseInt(rateTsys);
-
+	var rateTsys_num = parseFloat(rateTsys);
 	var fieldTsys = document.querySelector('#field-third').value;
 	var field_matches = fieldTsys.match(/\d+/g);
 	var i=0;
