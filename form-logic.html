@@ -324,7 +324,7 @@ function monthlyFeesTsys () {
 	document.querySelector('.tsys_fees').textContent = "N/A";
 	}
 	else {
-	document.querySelector(".tsys_fees").textContent = "$" + (((rateTsys_num * fieldTsys_num)) / 100).toFixed(0);
+	document.querySelector(".tsys_fees").textContent = "$" + ((((rateTsys_num * fieldTsys_num)) / 100).toFixed(0)).toLocaleString();
 	}
 }
 	<!-- ANNUAL SAVINGS TSYS -->
