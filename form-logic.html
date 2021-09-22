@@ -11,7 +11,11 @@ function getValue () {
 }
 }
 	function changeValue (value) {
-	var card_volume = value;
+	var card_val = value;
+	var card_matches = card_val.match(/\d+/g);
+	var i=0;
+	var card_num_1 = card_matches[0] + card_matches[1] + card_matches[2];
+	var card_volume = parseInt(card_num_1);
 	var markup_text = document.querySelector('.markup-text').textContent;
 	var amex = document.querySelector('.amex').textContent;
 	var amexCloud = document.querySelector('.cloud-amex').textContent;
