@@ -2,6 +2,179 @@
 <html>
 <body>
 <script>
+
+// slider-arrow
+$(".prev").click(()=> {
+$("#prev").trigger("click");
+});
+$(".next").click((e)=> {
+if(!e.target.hasAttribute("disabled")) { 
+$("#next").trigger("click");
+}
+});
+// yes or no
+$("#checked-yes").click(()=> {
+$("#radio-cards-yes").trigger("click");
+});
+$("#checked-no").click(()=> {
+$("#radio-cards-no").trigger("click");
+});
+// price radio 
+$("#price-1").click(()=> {
+$("#radio-price-1").trigger("click");
+});
+$("#price-2").click(()=> {
+$("#radio-price-2").trigger("click");
+});
+$("#price-3").click(()=> {
+$("#radio-price-3").trigger("click");
+});
+$("#price-4").click(()=> {
+$("#radio-price-4").trigger("click");
+});
+$("#price-5").click(()=> {
+$("#radio-price-5").trigger("click");
+});
+
+// sales radio
+$("#sales-price-1").click(()=> {
+$("#radio-sales-price-1").trigger("click");
+});
+$("#sales-price-2").click(()=> {
+$("#radio-sales-price-2").trigger("click");
+});
+$("#sales-price-3").click(()=> {
+$("#radio-sales-price-3").trigger("click");
+});
+$("#sales-price-4").click(()=> {
+$("#radio-sales-price-4").trigger("click");
+});
+$("#sales-price-5").click(()=> {
+$("#radio-sales-price-5").trigger("click");
+});
+//types yes or no
+$("#types-checked-yes-7").click(()=> {
+$("#types-radio-yes").trigger("click");
+});
+$("#types-checked-no-7").click(()=> {
+$("#types-radio-no").trigger("click");
+});
+//new slide
+$("#types-checked-yes-new").click(()=> {
+$("#types-radio-yes-new").trigger("click");
+});
+$("#types-checked-no-new").click(()=> {
+$("#types-radio-no-new").trigger("click");
+});
+//request yes or no
+$("#req-checked-yes-8").click(()=> {
+$("#req-radio-yes").trigger("click");
+});
+$("#req-checked-no-8").click(()=> {
+$("#req-radio-no").trigger("click");
+});
+//payment yes or no
+$("#pay-checked-yes-9").click(()=> {
+$("#pay-radio-yes").trigger("click");
+});
+$("#pay-checked-no-9").click(()=> {
+$("#pay-radio-no").trigger("click");
+});
+//specific brands
+$("#brands-checkbox-standart").click(()=> {
+$("#brands-radio-standart").trigger("click");
+});
+$("#brands-checkbox-clover").click(()=> {
+$("#brands-radio-clover").trigger("click");
+});
+$("#brands-checkbox-vital").click(()=> {
+$("#brands-radio-vital").trigger("click");
+});
+$("#brands-checkbox-recommends").click(()=> {
+$("#brands-radio-recommends").trigger("click");
+});
+$("#brands-checkbox-other").click(()=> {
+$("#brands-radio-other").trigger("click");
+});
+//pricing model
+$("#pricing-checkbox-intercharge").click(()=> {
+$("#interchange-plus").trigger("click");
+});
+$("#pricing-checkbox-flat").click(()=> {
+$("#flat-rate").trigger("click");
+});
+$("#pricing-checkbox-tiered").click(()=> {
+$("#tiered").trigger("click");
+});
+$("#pricing-checkbox-surcharge").click(()=> {
+$("#cash-discount-surcharge").trigger("click");
+});
+//quote radio
+$("#select-tsys").click(()=> {
+$("#tsys").trigger("click");
+});
+$("#select-paymentcloud").click(()=> {
+$("#paymentcloud").trigger("click");
+});
+$("#select-paysafe").click(()=> {
+$("#paysafe").trigger("click");
+});
+$("#select-clearent").click(()=> {
+$("#clearent").trigger("click");
+});
+//sabmit
+$(".submit-click").click(()=> {
+$("#submit").trigger("click");
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/12.0.0/nouislider.min.js" integrity="sha512-6vo59lZMHB6GgEySnojEnfhnugP7LR4qm6akxptNOw/KW+i9o9MK4Gaia8f/eJATjAzCkgN3CWlIHWbVi2twpg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.2.0/wNumb.min.js" integrity="sha512-igVQ7hyQVijOUlfg3OmcTZLwYJIBXU63xL9RC12xBHNpmGJAktDnzl9Iw0J4yrSaQtDxTTVlwhY730vphoVqJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+var slider = document.getElementById('slider');
+
+noUiSlider.create(slider, {
+    start: [50],
+    connect: true,
+     tooltips: [wNumb({
+	               decimals: 0,
+                 suffix: '%'
+                })],
+    range: {
+        'min': 1,
+        'max': 100
+    }
+});
+slider.noUiSlider.on('update', function () {
+let [fromValue, toValue] = slider.noUiSlider.get();
+$("#from").val(fromValue + "k");
+$("#to").val(toValue + "k");
+});
+</script>
+
+<script>
+$( "#to-five-step" ).on( "click", function() {
+let bullets = $('#step-slider-nav').children();
+let target = bullets[5];
+target.click();
+});
+$( "#through-one" ).on( "click", function() {
+let bullets = $('#step-slider-nav').children();
+let target = bullets[6];
+target.click();
+});
+$( "#to-second-bullett" ).on( "click", function() {
+let bullets = $('#step-slider-nav').children();
+let target = bullets[1];
+target.click();
+});
+$( "#to-fours-bullet" ).on( "click", function() {
+let bullets = $('#step-slider-nav').children();
+let target = bullets[4];
+target.click();
+});
+</script>
+<script>
+
 //Interchange Markup - get value
 function getValue () {
 	if (document.querySelector('#field-third')) {
