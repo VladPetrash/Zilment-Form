@@ -786,7 +786,7 @@ function annualSavingsPaysafe () {
 	var feesTsys_num = parseInt(feesTsys_m);
 	var fourthField_matches = fourth_field.match(/\d+/g);
 	var i=0;
-	var fourthField_m = feesTsys_matches[0] + fourthField_matches[1] + fourthField_matches[2] + fourthField_matches[3] + fourthField_matches[4] + fourthField_matches[5];
+	var fourthField_m = fourthField_matches[0] + fourthField_matches[1] + fourthField_matches[2] + fourthField_matches[3] + fourthField_matches[4] + fourthField_matches[5];
 	var fourthField_num = parseFloat(fourthField_m);
 	if((document.getElementById('radio-cards-no').checked) || (document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked) || ((document.getElementById('brands-radio-standart').checked || document.getElementById('brands-radio-vital').checked || document.getElementById('brands-radio-recommends').checked || document.getElementById('brands-radio-other').checked) && (document.getElementById('types-radio-yes').checked || document.getElementById('req-radio-yes').checked || document.getElementById('pay-radio-yes').checked))) {
 	document.querySelector(".safe_saving").textContent = "N/A";
