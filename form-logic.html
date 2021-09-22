@@ -354,6 +354,26 @@ function getCardsChoice () {
 function changeCardChoice (value) {
 	var cardChoice = value;
 }
+	
+	<!-- saving when -->
+function savingCheck () {
+	var field_value = document.querySelector('#field-third').value;
+	var field_v_m = field_value.match(/\d+/g);
+	var i=0;
+	var field_num_check = field_v_m[0] + field_v_m[1] + field_v_m[2] + field_v_m[3] + field_v_m[4] + field_v_m[5];
+	var fourthCheck = parseInt(field_num_check);
+	var x = 1050;
+	var y = 1385;
+	if(fourthCheck < 1050) {
+	document.querySelector(".tsys_saving").textContent = "N/A";
+	document.querySelector(".safe_saving").textContent = "N/A";
+	document.querySelector(".cloud_saving").textContent = "N/A"
+	}
+	if(fourthCheck < 1385) {
+	document.querySelector(".clearent_saving").textContent = "N/A"
+	}
+
+}
 <!-- trigger -->
 document.getElementById("submit-btn").onclick = function () {
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
@@ -395,6 +415,7 @@ document.getElementById("submit-btn").onclick = function () {
 	effectiveRatePaysafe_1 ();
 	monthlyFeesPaysafe ();
 	annualSavingsPaysafe ();
+	savingCheck ();
 };
 	<!-- 5slide input value -->
 if (document.querySelector('#field-third')) {
