@@ -487,6 +487,10 @@ function effectiveRateTsys_2 () {
 }
 	<!-- MONTHLY FEES TSYS -->
 function monthlyFeesTsys () {
+	if(document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked || document.getElementById('brands-radio-clover').checked || document.getElementById('types-radio-yes').checked || document.getElementById('req-radio-yes').checked || document.getElementById('pay-radio-yes').checked) {
+	document.querySelector('.tsys_fees').textContent = "N/A";
+	}
+	else {
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
 	changePricingModel(pricing_value);
 	var rateTsys = document.querySelector(".tsys_rate").textContent;
@@ -498,16 +502,16 @@ function monthlyFeesTsys () {
 	var fieldTsys_num = parseInt(field_num_1);
 	console.log(rateTsys_num);
 	console.log(fieldTsys_num);
-	if(document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked || document.getElementById('brands-radio-clover').checked || document.getElementById('types-radio-yes').checked || document.getElementById('req-radio-yes').checked || document.getElementById('pay-radio-yes').checked) {
-	document.querySelector('.tsys_fees').textContent = "N/A";
-	}
-	else {
 	var stringTsysFees = (((rateTsys_num * fieldTsys_num)) / 100).toFixed(0);
 	document.querySelector(".tsys_fees").textContent = "$" + (separator(stringTsysFees));
 	}
 }
 	<!-- ANNUAL SAVINGS TSYS -->
 function annualSavingsTsys () {
+	if(document.getElementById('radio-cards-no').checked || document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked || document.getElementById('brands-radio-clover').checked || document.getElementById('types-radio-yes').checked || document.getElementById('req-radio-yes').checked || document.getElementById('pay-radio-yes').checked) {
+	document.querySelector(".tsys_saving").textContent = "N/A";
+	}
+	else{
 	var card_value = document.querySelector('input[name="radio-cards"]:checked').value;
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
 	var fourth_field = document.querySelector('#field-fourth').value;
@@ -520,10 +524,6 @@ function annualSavingsTsys () {
 	var i=0;
 	var fourth_field_num = field_fourth_match[0] + field_fourth_match[1] + field_fourth_match[2] + field_fourth_match[3] + field_fourth_match[4] + field_fourth_match[5];
 	var fourthField_num = parseFloat(fourth_field_num);
-	if(document.getElementById('radio-cards-no').checked || document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked || document.getElementById('brands-radio-clover').checked || document.getElementById('types-radio-yes').checked || document.getElementById('req-radio-yes').checked || document.getElementById('pay-radio-yes').checked) {
-	document.querySelector(".tsys_saving").textContent = "N/A";
-	}
-	else{
 	var stringTsysSaving = ((fourthField_num - feesTsys_num) * 12).toFixed(0);
 	document.querySelector(".tsys_saving").textContent = "$" + (separator(stringTsysSaving));
 	}
@@ -613,6 +613,10 @@ function effectiveRateClearent () {
 }
 		<!-- MONTHLY FEES CLEARENT -->
 function monthlyFeesClearent () {
+	if(document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked || document.getElementById('brands-radio-clover').checked) {
+	document.querySelector('.clearent_fees').textContent = "N/A";
+	}
+	else {
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
 	changePricingModel(pricing_value);
 	var rateTsys = document.querySelector(".clearent_rate").textContent;
@@ -624,10 +628,6 @@ function monthlyFeesClearent () {
 	var fieldTsys_num = parseInt(field_num_1);
 	console.log(rateTsys_num);
 	console.log(fieldTsys_num);
-	if(document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked || document.getElementById('brands-radio-clover').checked) {
-	document.querySelector('.clearent_fees').textContent = "N/A";
-	}
-	else {
 	var stringClearentFees = (((rateTsys_num * fieldTsys_num)) / 100).toFixed(0);
 	document.querySelector(".clearent_fees").textContent = "$" + (separator(stringClearentFees));
 	}
@@ -635,6 +635,10 @@ function monthlyFeesClearent () {
 	
 		<!-- ANNUAL SAVINGS CLEARENT -->
 function annualSavingsClearent () {
+	if(document.getElementById('radio-cards-no').checked || document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked || document.getElementById('brands-radio-clover').checked) {
+	document.querySelector(".clearent_saving").textContent = "N/A";
+	}
+	else{
 	var card_value = document.querySelector('input[name="radio-cards"]:checked').value;
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
 	var fourth_field = document.querySelector('#field-fourth').value;
@@ -647,10 +651,6 @@ function annualSavingsClearent () {
 	var i=0;
 	var fourth_field_m = fourth_field_matches[0] + fourth_field_matches[1] + fourth_field_matches[2] + fourth_field_matches[3] + fourth_field_matches[4] + fourth_field_matches[5];
 	var fourthField_num = parseFloat(fourth_field_m);
-	if(document.getElementById('radio-cards-no').checked || document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked || document.getElementById('brands-radio-clover').checked) {
-	document.querySelector(".clearent_saving").textContent = "N/A";
-	}
-	else{
 	var stringClearentSaving = ((fourthField_num - feesTsys_num) * 12).toFixed(0);
 	document.querySelector(".clearent_saving").textContent = "$" + separator(stringClearentSaving);
 	}
@@ -731,6 +731,10 @@ function effectiveRatePaysafe_2 () {
 }
 	<!-- MONTHLY FEES PAYSAFE -->
 function monthlyFeesPaysafe () {
+	if((document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked) || ((document.getElementById('brands-radio-standart').checked || document.getElementById('brands-radio-vital').checked || document.getElementById('brands-radio-recommends').checked || document.getElementById('brands-radio-other').checked) && (document.getElementById('types-radio-yes').checked || document.getElementById('req-radio-yes').checked || document.getElementById('pay-radio-yes').checked))) {
+	document.querySelector('.safe_fees').textContent = "N/A";
+	}
+	else {
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
 	changePricingModel(pricing_value);
 	var rateTsys = document.querySelector(".safe_rate").textContent;
@@ -742,16 +746,16 @@ function monthlyFeesPaysafe () {
 	var fieldTsys_num = parseInt(fieldTsys_m);
 	console.log(rateTsys_num);
 	console.log(fieldTsys_num);
-	if((document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked) || ((document.getElementById('brands-radio-standart').checked || document.getElementById('brands-radio-vital').checked || document.getElementById('brands-radio-recommends').checked || document.getElementById('brands-radio-other').checked) && (document.getElementById('types-radio-yes').checked || document.getElementById('req-radio-yes').checked || document.getElementById('pay-radio-yes').checked))) {
-	document.querySelector('.safe_fees').textContent = "N/A";
-	}
-	else {
 	var stringPayFees = (((rateTsys_num * fieldTsys_num)) / 100).toFixed(0);
 	document.querySelector(".safe_fees").textContent = "$" + (separator(stringPayFees));
 	}
 }
 	<!-- ANNUAL SAVINGS PAYSAFE -->
 function annualSavingsPaysafe () {
+	if((document.getElementById('radio-cards-no').checked) || (document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked) || ((document.getElementById('brands-radio-standart').checked || document.getElementById('brands-radio-vital').checked || document.getElementById('brands-radio-recommends').checked || document.getElementById('brands-radio-other').checked) && (document.getElementById('types-radio-yes').checked || document.getElementById('req-radio-yes').checked || document.getElementById('pay-radio-yes').checked))) {
+	document.querySelector(".safe_saving").textContent = "N/A";
+	}
+	else{
 	var card_value = document.querySelector('input[name="radio-cards"]:checked').value;
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
 	var fourth_field = document.querySelector('#field-fourth').value;
@@ -764,10 +768,6 @@ function annualSavingsPaysafe () {
 	var i=0;
 	var fourthField_m = fourthField_matches[0] + fourthField_matches[1] + fourthField_matches[2] + fourthField_matches[3] + fourthField_matches[4] + fourthField_matches[5];
 	var fourthField_num = parseFloat(fourthField_m);
-	if((document.getElementById('radio-cards-no').checked) || (document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked) || ((document.getElementById('brands-radio-standart').checked || document.getElementById('brands-radio-vital').checked || document.getElementById('brands-radio-recommends').checked || document.getElementById('brands-radio-other').checked) && (document.getElementById('types-radio-yes').checked || document.getElementById('req-radio-yes').checked || document.getElementById('pay-radio-yes').checked))) {
-	document.querySelector(".safe_saving").textContent = "N/A";
-	}
-	else{
 	var stringPaySaving = ((fourthField_num - feesTsys_num) * 12).toFixed(0);
 	document.querySelector(".safe_saving").textContent = "$" + (separator(stringPaySaving));
 	}
