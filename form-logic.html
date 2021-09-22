@@ -242,6 +242,12 @@ document.getElementById("submit-btn").onclick = function () {
 	monthlyFeesPaysafe ();
 	annualSavingsPaysafe ();
 };
+	<!-- 5slide input value -->
+if (document.querySelector('#field-third')) {
+	document.querySelectorAll('#field-third').forEach((card_vol) => {
+  	 card_vol.addEventListener("change", function(event) {
+     var card_volume = event.target.value;
+	document.getElementById('field-fourth').value = document.getElementById('field-fourth').value + (card_volume * 0.03);
 	<!-- ADD COMMAS -->
 function separator(numb) {
     var str = numb.toString().split(".");
