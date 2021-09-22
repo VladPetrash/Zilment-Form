@@ -187,7 +187,7 @@ function getValue () {
 	var card_val = value;
 	var card_matches = card_val.match(/\d+/g);
 	var i=0;
-	var card_num_1 = card_matches[0] + card_matches[1] + card_matches[2];
+	var card_num_1 = card_matches[0] + card_matches[1] + card_matches[2] + card_matches[3] + card_matches[4] + card_matches[5];
 	var card_volume = parseInt(card_num_1);
 	var markup_text = document.querySelector('.markup-text').textContent;
 	var amex = document.querySelector('.amex').textContent;
@@ -426,7 +426,7 @@ if (document.querySelector('#field-third')) {
      var field_3v = event.target.value;
 	    var field_matches = field_3v.match(/\d+/g);
 		var i=0;
-		var field_num_1 = field_matches[0] + field_matches[1] + field_matches[2];
+		var field_num_1 = field_matches[0] + field_matches[1] + field_matches[2] + field_matches[3] + field_matches[4] + field_matches[5];
     var card_volume = parseFloat(field_num_1);
 	document.getElementById('field-fourth').value = (card_volume * 0.03);
 	 var field_4Req = document.getElementById('error-fourth');
@@ -499,7 +499,7 @@ function effectiveRateTsys_2 () {
 		var monthly_num = parseInt(monthly_matches);
 		var field_matches = field_value.match(/\d+/g);
 		var i=0;
-		var field_num_1 = field_matches[0] + field_matches[1] + field_matches[2];
+		var field_num_1 = field_matches[0] + field_matches[1] + field_matches[2] + field_matches[3] + field_matches[4] + field_matches[5];
 		var field_num = parseInt(field_num_1);
 		if(document.getElementById('types-radio-no-new').checked) {
 		document.querySelector('.tsys_rate').textContent = (((0.0175 + (markup_num / 100)) + (monthly_num / field_num)) * 100).toFixed(2) + "%";
@@ -514,11 +514,15 @@ function monthlyFeesTsys () {
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
 	changePricingModel(pricing_value);
 	var rateTsys = document.querySelector(".tsys_rate").textContent;
+	var rateMatches = rateTsys.match(/\d+/g);
+	var i=0;
+	var rateTsys1 = rateMatches[0] + rateMatches[1] + rateMatches[2] + rateMatches[3] + rateMatches[4] + rateMatches[5];
+	var rateTsys_num = parseInt(rateTsys1);
+
 	var fieldTsys = document.querySelector('#field-third').value;
-	var rateTsys_num = parseFloat(rateTsys);
 	var field_matches = fieldTsys.match(/\d+/g);
 	var i=0;
-	var field_num_1 = field_matches[0] + field_matches[1] + field_matches[2];
+	var field_num_1 = field_matches[0] + field_matches[1] + field_matches[2] + field_matches[3] + field_matches[4] + field_matches[5];
 	var fieldTsys_num = parseInt(field_num_1);
 	console.log(rateTsys_num);
 	console.log(fieldTsys_num);
@@ -536,9 +540,14 @@ function annualSavingsTsys () {
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
 	var fourth_field = document.querySelector('#field-fourth').value;
 	var fees_tsys = document.querySelector('.tsys_fees').textContent;
-	var feesTsys_matches = fees_tsys.match(/(\d+)/);
-	var feesTsys_num = parseInt(feesTsys_matches);
-	var fourthField_num = parseFloat(fourth_field);
+	var feesTsys_matches = fees_tsys.match(/\d+/g);
+	var i=0;
+	var feesTsys_m = feesTsys_matches[0] + feesTsys_matches[1] + feesTsys_matches[2] + feesTsys_matches[3] + feesTsys_matches[4] + feesTsys_matches[5];
+	var feesTsys_num = parseInt(feesTsys_m);
+	var field_fourth_match = fourth_field.match(/\d+/g);
+	var i=0;
+	var fourth_field_num = field_fourth_match[0] + field_fourth_match[1] + field_fourth_match[2] + field_fourth_match[3] + field_fourth_match[4] + field_fourth_match[5];
+	var fourthField_num = parseFloat(fourth_field_num);
 	if(document.getElementById('radio-cards-no').checked || document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked || document.getElementById('brands-radio-clover').checked || document.getElementById('types-radio-yes').checked || document.getElementById('req-radio-yes').checked || document.getElementById('pay-radio-yes').checked) {
 	document.querySelector(".tsys_saving").textContent = "N/A";
 	}
@@ -616,8 +625,10 @@ function effectiveRateClearent () {
 		var markup_num = parseFloat(markup_value);
 		var monthly_matches = monthly_value.match(/(\d+)/);
 		var monthly_num = parseInt(monthly_matches);
-		var field_matches = field_value.match(/(\d+)/);
-		var field_num = parseInt(field_matches);
+    		var field_matches = field_value.match(/\d+/g);
+		var i=0;
+		var field_num_1 = field_matches[0] + field_matches[1] + field_matches[2] + field_matches[3] + field_matches[4] + field_matches[5];
+   		var field_num = parseFloat(field_num_1);
 		if(document.getElementById('types-radio-no-new').checked) {
 		document.querySelector('.clearent_rate').textContent = (((0.0175 + (markup_num / 100)) + (monthly_num / field_num)) * 100).toFixed(2) + "%";
 		}
