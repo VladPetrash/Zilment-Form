@@ -317,7 +317,8 @@ function effectiveRateTsys_2 () {
 		var monthly_matches = monthly_value.match(/(\d+)/);
 		var monthly_num = parseInt(monthly_matches);
 		var field_matches = field_value.match(/\d+/g);
-		var field_num = parseInt(field_matches);
+		var field_num_1 = matches[0] + matches[1] + matches[2];
+		var field_num = parseInt(field_num_1);
 		if(document.getElementById('types-radio-no-new').checked) {
 		document.querySelector('.tsys_rate').textContent = (((0.0175 + (markup_num / 100)) + (monthly_num / field_num)) * 100).toFixed(2) + "%";
 		}
