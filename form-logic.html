@@ -177,13 +177,13 @@ function getValue () {
 	var coefCloud = 0.35;
 	var markup_value = markup_1 + coef;
 	var markup_value_2 = markup_1 + coefCloud;
-       		if (card_volume < x) {
+       		if (card_volume <= x) {
        			document.querySelector('.markup-text').textContent = markup_1 + "%";
        			document.querySelector('.amex').textContent = markup_value.toFixed(2) + "%";
 			document.querySelector('.cloud-amex').textContent = markup_value_2.toFixed(2) + "%";           
 			return false;
        			}
-        	if (card_volume < y) {
+        	if (card_volume <= y) {
         		document.querySelector('.markup-text').textContent = markup_2 + "%";
           		document.querySelector('.amex').textContent = (markup_2 + coef).toFixed(2) + "%";
 			document.querySelector('.cloud-amex').textContent = (markup_2 + coefCloud).toFixed(2) + "%";
