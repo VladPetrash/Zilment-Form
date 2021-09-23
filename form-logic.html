@@ -512,6 +512,7 @@ function effectiveRateTsys_2 () {
 	changePricingModel(pricing_value);
 	if(document.getElementById('flat-rate').checked) {
 	document.querySelector('.tsys_rate').textContent = "2.5%";
+	document.querySelector('.tsys_rate_new').textContent = "2.5%";
 	}
 	else{
 		var debit_value = document.querySelector('input[name="debit-choice"]:checked').value;
@@ -641,6 +642,7 @@ function effectiveRateClearent () {
 	changePricingModel(pricing_value);
 	if(document.getElementById('flat-rate').checked) {
 	document.querySelector('.clearent_rate').textContent = "2.5%";
+	document.querySelector('.clearent_rate_new').textContent = "2.5%";
 	}
 	else{
 		var debit_value = document.querySelector('input[name="debit-choice"]:checked').value;
@@ -766,6 +768,7 @@ function effectiveRatePaysafe_2 () {
 	changePricingModel(pricing_value);
 	if(document.getElementById('flat-rate').checked) {
 	document.querySelector('.safe_rate').textContent = "2.5%";
+	document.querySelector('.safe_rate_new').textContent = "2.5%";
 	}
 	else{
 		var debit_value = document.querySelector('input[name="debit-choice"]:checked').value;
