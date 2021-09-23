@@ -2,28 +2,7 @@
 <html>
 <body>
 <script>
-		<!-- 5slide input value -->
-document.getElementById("third-slide-btn").onclick = function () {
-if (document.querySelector('#field-third')) {
-	document.querySelectorAll('#field-third').forEach((card_vol) => {
-  	 card_vol.addEventListener("change", function(event) {
-     	var field_3v = event.target.value;
-	var field_matches = field_3v.match(/\d+/g);
-	var i=0;
-	var field_num_1 = field_matches[0] + field_matches[1] + field_matches[2] + field_matches[3] + field_matches[4] + field_matches[5];
-    	var card_volume = parseFloat(field_num_1);
-		 // input value
-	document.getElementById('field-fourth').value = card_volume * 0.03;
-		 // input placeholder
-	var placeholderValue = (separator(((card_volume * 0.03)).toFixed(0)));
-	document.getElementById('placeholder-v').textContent = placeholderValue;
-		 // error
-	var field_4Req = document.getElementById('error-fourth');
-    	field_4Req.style.display = "none";
-	});
-	});
-}
-}
+
 
 // slider-arrow
 $(".prev").click(()=> {
@@ -463,7 +442,26 @@ document.getElementById("submit-btn").onclick = function () {
 	savingCheckNew ();
 	
 };
-	
+	<!---->
+if (document.querySelector('#field-third')) {
+	document.querySelectorAll('#field-third').forEach((card_vol) => {
+  	 card_vol.addEventListener("change", function(event) {
+     	var field_3v = event.target.value;
+	var field_matches = field_3v.match(/\d+/g);
+	var i=0;
+	var field_num_1 = field_matches[0] + field_matches[1] + field_matches[2] + field_matches[3] + field_matches[4] + field_matches[5];
+    	var card_volume = parseFloat(field_num_1);
+		 // input value
+	document.getElementById('field-fourth').value = card_volume * 0.03;
+		 // input placeholder
+	var placeholderValue = (separator(((card_volume * 0.03)).toFixed(0)));
+	document.getElementById('placeholder-v').textContent = placeholderValue;
+		 // error
+	var field_4Req = document.getElementById('error-fourth');
+    	field_4Req.style.display = "none";
+	});
+	});
+}	
 
 
 	<!-- ADD COMMAS -->
