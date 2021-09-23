@@ -407,7 +407,6 @@ document.getElementById("submit-btn").onclick = function () {
 	var types_value = document.querySelector('input[name="types-choice"]:checked').value;
 	var request_value = document.querySelector('input[name="request-choice"]:checked').value;
 	var online_value = document.querySelector('input[name="online-choice"]:checked').value;
-	var debit_value = document.querySelector('input[name="debit-choice"]:checked').value;
 	var markup_value = document.querySelector("#markup_value").textContent;
 	var monthly_value = document.querySelector("#monthly_value").textContent;
 	var field_value = document.querySelector('#field-third').value;
@@ -425,7 +424,6 @@ document.getElementById("submit-btn").onclick = function () {
 	console.log(types_value);
 	console.log(request_value);
 	console.log(online_value);
-	console.log(debit_value);
 	console.log(markup_value);
 	console.log(monthly_value);
 	console.log(field_value);
@@ -518,7 +516,8 @@ function effectiveRateTsys_2 () {
 	document.querySelector('.tsys_rate').textContent = "2.50%";
 	document.querySelector('.tsys_rate_new').textContent = "2.5%";
 	}
-	else{
+	else{	
+	if(document.getElementById("radio-cards-yes").checked) {
 		var debit_value = document.querySelector('input[name="debit-choice"]:checked').value;
 		var markup_value = document.querySelector("#markup_value").textContent;
 		var monthly_value = document.querySelector("#monthly_value").textContent;
@@ -545,6 +544,7 @@ function effectiveRateTsys_2 () {
 		document.querySelector('.tsys_rate').textContent = tsys_rate;	
 		}
 	}
+}
 }
 	<!-- MONTHLY FEES TSYS -->
 function monthlyFeesTsys () {
