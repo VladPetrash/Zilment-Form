@@ -449,7 +449,8 @@ if (document.querySelector('#field-third')) {
 		var i=0;
 		var field_num_1 = field_matches[0] + field_matches[1] + field_matches[2] + field_matches[3] + field_matches[4] + field_matches[5];
     var card_volume = parseFloat(field_num_1);
-	document.getElementById('field-fourth').value = separator(((card_volume * 0.03)).toFixed(0));
+	document.getElementById('field-fourth').value = (card_volume * 0.03);
+	document.getElementById('field-fourth')[0].placeholder = separator(((card_volume * 0.03)).toFixed(0));
 	 var field_4Req = document.getElementById('error-fourth');
     	 field_4Req.style.display = "none";
 	 });
