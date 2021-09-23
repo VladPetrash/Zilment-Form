@@ -454,8 +454,7 @@ if (document.querySelector('#field-third')) {
 	document.getElementById('field-fourth').value = card_volume * 0.03;
 		 // input placeholder
 	var placeholderValue = (separator(((card_volume * 0.03)).toFixed(0)));
-	var placeholderText = document.getElementById('field-fourth');
-	placeholderText.placeholder = placeholderValue;
+	document.getElementById('placeholder-v').textContent = placeholderValue;
 		 // error
 	var field_4Req = document.getElementById('error-fourth');
     	field_4Req.style.display = "none";
