@@ -445,18 +445,21 @@ document.getElementById("submit-btn").onclick = function () {
 if (document.querySelector('#field-third')) {
 	document.querySelectorAll('#field-third').forEach((card_vol) => {
   	 card_vol.addEventListener("change", function(event) {
-     var field_3v = event.target.value;
-	    var field_matches = field_3v.match(/\d+/g);
-		var i=0;
-		var field_num_1 = field_matches[0] + field_matches[1] + field_matches[2] + field_matches[3] + field_matches[4] + field_matches[5];
-    var card_volume = parseFloat(field_num_1);
+     	var field_3v = event.target.value;
+	var field_matches = field_3v.match(/\d+/g);
+	var i=0;
+	var field_num_1 = field_matches[0] + field_matches[1] + field_matches[2] + field_matches[3] + field_matches[4] + field_matches[5];
+    	var card_volume = parseFloat(field_num_1);
+		 // input value
 	document.getElementById('field-fourth').value = card_volume * 0.03;
+		 // input placeholder
 	var placeholderValue = (separator(((card_volume * 0.03)).toFixed(0)));
 	var placeholderText = document.getElementById('field-fourth');
-	placeholderText.placeholder = placeholderValue.textContent;
-	 var field_4Req = document.getElementById('error-fourth');
-    	 field_4Req.style.display = "none";
-	 });
+	placeholderText.placeholder = placeholderValue;
+		 // error
+	var field_4Req = document.getElementById('error-fourth');
+    	field_4Req.style.display = "none";
+	});
 	});
 }
 
@@ -556,6 +559,7 @@ function monthlyFeesTsys () {
 	var fieldTsys_num = parseInt(field_num_1);
 	console.log(rateTsys_num);
 	console.log(fieldTsys_num);
+	document.querySelector(".tsys_fees_new").textContent = ((rateTsys_num * fieldTsys_num)) / 100;
 	var stringTsysFees = (((rateTsys_num * fieldTsys_num)) / 100).toFixed(0);
 	document.querySelector(".tsys_fees").textContent = "$" + (separator(stringTsysFees));
 	}
@@ -569,11 +573,11 @@ function annualSavingsTsys () {
 	var card_value = document.querySelector('input[name="radio-cards"]:checked').value;
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
 	var fourth_field = document.querySelector('#field-fourth').value;
-	var fees_tsys = document.querySelector('.tsys_fees').textContent;
-	var feesTsys_matches = fees_tsys.match(/\d+/g);
-	var i=0;
-	var feesTsys_m = feesTsys_matches[0] + feesTsys_matches[1] + feesTsys_matches[2] + feesTsys_matches[3] + feesTsys_matches[4] + feesTsys_matches[5];
-	var feesTsys_num = parseInt(feesTsys_m);
+	var fees_tsys = document.querySelector('.tsys_fees_new').textContent;
+	//var feesTsys_matches = fees_tsys.match(/\d+/g);
+	//var i=0;
+	//var feesTsys_m = feesTsys_matches[0] + feesTsys_matches[1] + feesTsys_matches[2] + feesTsys_matches[3] + feesTsys_matches[4] + feesTsys_matches[5];
+	var feesTsys_num = parseInt(fees_tsys);
 	//var field_fourth_match = fourth_field.match(/\d+/g);
 	//var i=0;
 	//var fourth_field_num = field_fourth_match[0] + field_fourth_match[1] + field_fourth_match[2] + field_fourth_match[3] + field_fourth_match[4] + field_fourth_match[5];
@@ -686,6 +690,7 @@ function monthlyFeesClearent () {
 	var fieldTsys_num = parseInt(field_num_1);
 	console.log(rateTsys_num);
 	console.log(fieldTsys_num);
+	document.querySelector(".clearent_fees_new").textContent = ((rateTsys_num * fieldTsys_num)) / 100;
 	var stringClearentFees = (((rateTsys_num * fieldTsys_num)) / 100).toFixed(0);
 	document.querySelector(".clearent_fees").textContent = "$" + (separator(stringClearentFees));
 	}
@@ -700,11 +705,11 @@ function annualSavingsClearent () {
 	var card_value = document.querySelector('input[name="radio-cards"]:checked').value;
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
 	var fourth_field = document.querySelector('#field-fourth').value;
-	var fees_tsys = document.querySelector('.clearent_fees').textContent;
-	var feesTsys_matches = fees_tsys.match(/\d+/g);
-	var i=0;
-	var feesTsys_m = feesTsys_matches[0] + feesTsys_matches[1] + feesTsys_matches[2] + feesTsys_matches[3] + feesTsys_matches[4] + feesTsys_matches[5];
-	var feesTsys_num = parseInt(feesTsys_m);
+	var fees_tsys = document.querySelector('.clearent_fees_new').textContent;
+	//var feesTsys_matches = fees_tsys.match(/\d+/g);
+	//var i=0;
+	//var feesTsys_m = feesTsys_matches[0] + feesTsys_matches[1] + feesTsys_matches[2] + feesTsys_matches[3] + feesTsys_matches[4] + feesTsys_matches[5];
+	var feesTsys_num = parseInt(fees_tsys);
 	//var fourth_field_matches = fourth_field.match(/\d+/g);
 	//var i=0;
 	//var fourth_field_m = fourth_field_matches[0] + fourth_field_matches[1] + fourth_field_matches[2] + fourth_field_matches[3] + fourth_field_matches[4] + fourth_field_matches[5];
@@ -808,6 +813,7 @@ function monthlyFeesPaysafe () {
 	var fieldTsys_num = parseInt(fieldTsys_m);
 	console.log(rateTsys_num);
 	console.log(fieldTsys_num);
+	document.querySelector(".safe_fees_new").textContent = ((rateTsys_num * fieldTsys_num)) / 100;
 	var stringPayFees = (((rateTsys_num * fieldTsys_num)) / 100).toFixed(0);
 	document.querySelector(".safe_fees").textContent = "$" + (separator(stringPayFees));
 	}
@@ -821,11 +827,11 @@ function annualSavingsPaysafe () {
 	var card_value = document.querySelector('input[name="radio-cards"]:checked').value;
 	var pricing_value = document.querySelector('input[name="pricing-model"]:checked').value;
 	var fourth_field = document.querySelector('#field-fourth').value;
-	var fees_tsys = document.querySelector('.safe_fees').textContent;
-	var feesTsys_matches = fees_tsys.match(/\d+/g);
-	var i=0;
-	var feesTsys_m = feesTsys_matches[0] + feesTsys_matches[1] + feesTsys_matches[2] + feesTsys_matches[3] + feesTsys_matches[4] + feesTsys_matches[5];
-	var feesTsys_num = parseInt(feesTsys_m);
+	var fees_tsys = document.querySelector('.safe_fees_new').textContent;
+	//var feesTsys_matches = fees_tsys.match(/\d+/g);
+	//var i=0;
+	//var feesTsys_m = feesTsys_matches[0] + feesTsys_matches[1] + feesTsys_matches[2] + feesTsys_matches[3] + feesTsys_matches[4] + feesTsys_matches[5];
+	var feesTsys_num = parseInt(fees_tsys);
 	//var fourthField_matches = fourth_field.match(/\d+/g);
 	//var i=0;
 	//var fourthField_m = fourthField_matches[0] + fourthField_matches[1] + fourthField_matches[2] + fourthField_matches[3] + fourthField_matches[4] + fourthField_matches[5];
