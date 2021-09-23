@@ -314,11 +314,13 @@ function changeOnlineChoice (value) {
 }
 	//get debit choice
 function getDebitChoice () {
+if(document.getElementById("radio-cards-yes").checked) {
 	if(document.querySelector('input[name="debit-choice"]')) {
 	document.querySelectorAll('input[name="debit-choice"]').forEach((elem) => {
 	elem.addEventListener("change", () => {changeDebitChoice(event.target.value)});
 	});
 	}
+}
 }
 function changeDebitChoice (value) {
 	var debitChoice = value;
