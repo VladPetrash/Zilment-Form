@@ -450,7 +450,8 @@ if (document.querySelector('#field-third')) {
 		var field_num_1 = field_matches[0] + field_matches[1] + field_matches[2] + field_matches[3] + field_matches[4] + field_matches[5];
     var card_volume = parseFloat(field_num_1);
 	document.getElementById('field-fourth').value = (card_volume * 0.03);
-	document.getElementById('field-fourth').placeholder = separator(((card_volume * 0.03)).toFixed(0));
+	var placeholderValue = separator(((card_volume * 0.03)).toFixed(0));
+	document.querySelector('#field-fourth input').setAttribute('placeholder', placeholderValue);
 	 var field_4Req = document.getElementById('error-fourth');
     	 field_4Req.style.display = "none";
 	 });
