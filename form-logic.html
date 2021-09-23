@@ -173,7 +173,7 @@ function getValue () {
 	var markup_1 = 0.20;
 	var markup_2 = 0.15;
 	var markup_3 = 0.10;
-	var coef = 0.1;
+	var coef = 0.10;
 	var coefCloud = 0.35;
 	var markup_value = markup_1 + coef;
 	var markup_value_2 = markup_1 + coefCloud;
@@ -656,7 +656,7 @@ function effectiveRateClearent () {
 		document.querySelector('.clearent_rate').textContent = clearentRate;
 		}
 		else{
-		document.querySelector('.clearent_rate_new').textContent = (((0.0135 + (markup_num / 100)) + (monthly_num / field_num)) * 100).toFixed(2) + "%";
+		document.querySelector('.clearent_rate_new').textContent = (((0.0135 + (markup_num / 100)) + (monthly_num / field_num)) * 100);
 		var clearentRate = (((0.0135 + (markup_num / 100)) + (monthly_num / field_num)) * 100).toFixed(2) + "%";
 		document.querySelector('.clearent_rate').textContent = clearentRate;
 		}
