@@ -160,6 +160,7 @@ function getValue () {
 }
 }
 	function changeValue (value) {
+if(document.getElementById("radio-cards-yes").checked) {
 	var card_val = value;
 	var card_matches = card_val.match(/\d+/g);
 	var i=0;
@@ -195,6 +196,7 @@ function getValue () {
 			document.querySelector('.cloud-amex').textContent = (markup_3 + coefCloud).toFixed(2) + "%";
        			return false;
         		}
+	}
 	}
 //pricing-model
 if (document.querySelector('input[name="pricing-model"]')) {
