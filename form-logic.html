@@ -547,7 +547,7 @@ function effectiveRateTsys_2 () {
 }
 	<!-- MONTHLY FEES TSYS -->
 function monthlyFeesTsys () {
-	if(document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked || document.getElementById('brands-radio-clover').checked || document.getElementById('types-radio-yes').checked || document.getElementById('req-radio-yes').checked || document.getElementById('pay-radio-yes').checked) {
+	if(document.getElementById("radio-cards-no").checked || document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked || document.getElementById('brands-radio-clover').checked || document.getElementById('types-radio-yes').checked || document.getElementById('req-radio-yes').checked || document.getElementById('pay-radio-yes').checked) {
 	document.querySelector('.tsys_fees').textContent = "N/A";
 	}
 	else {
@@ -681,7 +681,7 @@ function effectiveRateClearent () {
 }
 		<!-- MONTHLY FEES CLEARENT -->
 function monthlyFeesClearent () {
-	if(document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked || document.getElementById('brands-radio-clover').checked) {
+	if(document.getElementById('radio-cards-no').checked || document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked || document.getElementById('brands-radio-clover').checked) {
 	document.querySelector('.clearent_fees').textContent = "N/A";
 	}
 	else {
@@ -807,7 +807,7 @@ function effectiveRatePaysafe_2 () {
 }
 	<!-- MONTHLY FEES PAYSAFE -->
 function monthlyFeesPaysafe () {
-	if((document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked) || ((document.getElementById('brands-radio-standart').checked || document.getElementById('brands-radio-vital').checked || document.getElementById('brands-radio-recommends').checked || document.getElementById('brands-radio-other').checked) && (document.getElementById('types-radio-yes').checked || document.getElementById('req-radio-yes').checked || document.getElementById('pay-radio-yes').checked))) {
+	if(document.getElementById('radio-cards-no').checked || (document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked) || ((document.getElementById('brands-radio-standart').checked || document.getElementById('brands-radio-vital').checked || document.getElementById('brands-radio-recommends').checked || document.getElementById('brands-radio-other').checked) && (document.getElementById('types-radio-yes').checked || document.getElementById('req-radio-yes').checked || document.getElementById('pay-radio-yes').checked))) {
 	document.querySelector('.safe_fees').textContent = "N/A";
 	}
 	else {
