@@ -149,6 +149,39 @@ let bullets = $('#step-slider-nav').children();
 let target = bullets[4];
 target.click();
 });
+document.getElementById("trigger-to-choice").onclick = function choiceWay () {
+	if(document.querySelector('input[name="radio-cards"]')) {
+	document.querySelectorAll('input[name="radio-cards"]').forEach((elem) => {
+	elem.addEventListener("change", () => {
+	if(document.getElementById("radio-cards-yes").checked) {
+	$( "#choice-next" ).on( "click", function() {
+	let bullets = $('#step-slider-nav').children();
+	let target = bullets[4];
+	target.click();
+	});
+	$( "#choice-prev" ).on( "click", function() {
+	let bullets = $('#step-slider-nav').children();
+	let target = bullets[5];
+	target.click();
+	});
+	}
+	if(document.getElementById("radio-cards-no").checked) {
+	$( "#choice-next" ).on( "click", function() {
+	let bullets = $('#step-slider-nav').children();
+	let target = bullets[5];
+	target.click();
+	});
+	$( "#choice-prev" ).on( "click", function() {
+	let bullets = $('#step-slider-nav').children();
+	let target = bullets[4];
+	target.click();
+	});
+	}
+	});
+	});
+	}
+
+}
 </script>
 <script>
 
@@ -387,16 +420,16 @@ function savingCheckNew () {
 	const safe = document.querySelector(".safe_saving").textContent;
 	const pay = document.querySelector(".pay-saving").textContent;
 	const clearent = document.querySelector(".clearent_saving").textContent;
-	if(tsys.includes('-')) {
+	if(tsys.includes('-') || document.getElementById("radio-cards-no").checked) {
 	document.querySelector(".tsys_saving").textContent = "N/A"
 	}
-	if(safe.includes('-')) {
+	if(safe.includes('-') || document.getElementById("radio-cards-no").checked) {
 	document.querySelector(".safe_saving").textContent = "N/A"
 	}
-	if(pay.includes('-')) {
+	if(pay.includes('-') || document.getElementById("radio-cards-no").checked) {
 	document.querySelector(".pay-saving").textContent = "N/A"
 	}
-	if(clearent.includes('-')) {
+	if(clearent.includes('-') || document.getElementById("radio-cards-no").checked) {
 	document.querySelector(".clearent_saving").textContent = "N/A"
 	}
 }
@@ -454,8 +487,8 @@ if (document.querySelector('#field-third')) {
 		 // input value
 	document.getElementById('field-fourth').value = card_volume * 0.03;
 		 // input placeholder
-	var placeholderValue = (separator(((card_volume * 0.03)).toFixed(0)));
-	document.getElementById('placeholder-v').textContent = placeholderValue;
+		//var placeholderValue = (separator(((card_volume * 0.03)).toFixed(0)));
+		//document.getElementById('placeholder-v').textContent = placeholderValue;
 		 // error
 	var field_4Req = document.getElementById('error-fourth');
     	field_4Req.style.display = "none";
