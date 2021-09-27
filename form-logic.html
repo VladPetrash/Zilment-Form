@@ -196,7 +196,6 @@ function getValue () {
 }
 }
 	function changeValue (value) {
-if(document.getElementById("radio-cards-yes").checked) {
 	var card_val = value;
 	var card_matches = card_val.match(/\d+/g);
 	var i=0;
@@ -233,7 +232,7 @@ if(document.getElementById("radio-cards-yes").checked) {
        			return false;
         		}
 	}
-	}
+	
 //pricing-model
 if (document.querySelector('input[name="pricing-model"]')) {
   document.querySelectorAll('input[name="pricing-model"]').forEach((elem) => {
