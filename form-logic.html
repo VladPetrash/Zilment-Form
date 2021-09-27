@@ -132,7 +132,7 @@ $("#submit").trigger("click");
 
 	if(document.querySelector('input[name="radio-cards"]')) {
 	document.querySelectorAll('input[name="radio-cards"]').forEach((elem) => {
-	elem.addEventListener("change", () => {
+	elem.addEventListener("click", () => {
 	if(document.getElementById("radio-cards-yes").checked) {
 	$( "#choice-next" ).on( "click", function() {
 	let bullets = $('#step-slider-nav').children();
