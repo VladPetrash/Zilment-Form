@@ -488,8 +488,8 @@ if (document.querySelector('#field-third')) {
 		 // input value
 	document.getElementById('field-fourth').value = card_volume * 0.03;
 		 // input placeholder
-		//var placeholderValue = (separator(((card_volume * 0.03)).toFixed(0)));
-		//document.getElementById('placeholder-v').textContent = placeholderValue;
+	var forUserValue = (separator(((card_volume * 0.03)).toFixed(0)));
+	document.getElementById('field-fourth-for-user').value = forUserValue;
 		 // error
 	var field_4Req = document.getElementById('error-fourth');
     	field_4Req.style.display = "none";
