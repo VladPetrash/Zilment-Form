@@ -129,6 +129,41 @@ $("#submit").trigger("click");
 });
 </script>
 <script>
+document.getElementById("trigger-to-choice").onclick = function choiceWay () {
+	if(document.querySelector('input[name="radio-cards"]')) {
+	document.querySelectorAll('input[name="radio-cards"]').forEach((elem) => {
+	elem.addEventListener("change", () => {
+	if(document.getElementById("radio-cards-yes").checked) {
+	$( "#choice-next" ).on( "click", function() {
+	let bullets = $('#step-slider-nav').children();
+	let target = bullets[4];
+	target.click();
+	});
+	$( "#choice-prev" ).on( "click", function() {
+	let bullets = $('#step-slider-nav').children();
+	let target = bullets[5];
+	target.click();
+	});
+	}
+	else {
+	$( "#choice-next" ).on( "click", function() {
+	let bullets = $('#step-slider-nav').children();
+	let target = bullets[5];
+	target.click();
+	});
+	$( "#choice-prev" ).on( "click", function() {
+	let bullets = $('#step-slider-nav').children();
+	let target = bullets[4];
+	target.click();
+	});
+	}
+	});
+	});
+	}
+
+}
+	
+	
 $( "#to-five-step" ).on( "click", function() {
 let bullets = $('#step-slider-nav').children();
 let target = bullets[5];
@@ -149,39 +184,6 @@ let bullets = $('#step-slider-nav').children();
 let target = bullets[4];
 target.click();
 });
-document.getElementById("trigger-to-choice").onclick = function choiceWay () {
-	if(document.querySelector('input[name="radio-cards"]')) {
-	document.querySelectorAll('input[name="radio-cards"]').forEach((elem) => {
-	elem.addEventListener("change", () => {
-	if(document.getElementById("radio-cards-yes").checked) {
-	$( "#choice-next" ).on( "click", function() {
-	let bullets = $('#step-slider-nav').children();
-	let target = bullets[4];
-	target.click();
-	});
-	$( "#choice-prev" ).on( "click", function() {
-	let bullets = $('#step-slider-nav').children();
-	let target = bullets[5];
-	target.click();
-	});
-	}
-	if(document.getElementById("radio-cards-no").checked) {
-	$( "#choice-next" ).on( "click", function() {
-	let bullets = $('#step-slider-nav').children();
-	let target = bullets[5];
-	target.click();
-	});
-	$( "#choice-prev" ).on( "click", function() {
-	let bullets = $('#step-slider-nav').children();
-	let target = bullets[4];
-	target.click();
-	});
-	}
-	});
-	});
-	}
-
-}
 </script>
 <script>
 
