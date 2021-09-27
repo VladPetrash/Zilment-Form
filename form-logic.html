@@ -129,6 +129,16 @@ $("#submit").trigger("click");
 });
 </script>
 <script>
+document.getElementByClassName('active_9').onclick = function validationSpec () {
+	var inputOther = document.getElementById("brands-checkbox-other").value;
+if(document.getElementById("brands-radio-standart").checked || document.getElementById("brands-radio-clover").checked || document.getElementById("brands-radio-vital").checked || document.getElementById("brands-radio-recommends").checked || inputOther != "" || inputOther != null) {
+	 var toNextspec = document.getElementById('specific-next');
+    	toNextspec.click();
+}
+}
+</script>
+	
+<script>
 
 	if(document.querySelector('input[name="radio-cards"]')) {
 	document.querySelectorAll('input[name="radio-cards"]').forEach((elem) => {
