@@ -552,7 +552,6 @@ function effectiveRateTsys_2 () {
 	document.querySelector('.tsys_rate_new').textContent = "2.5%";
 	}
 	else{	
-	if(document.getElementById("radio-cards-yes").checked) {
 		var debit_value = document.querySelector('input[name="debit-choice"]:checked').value;
 		var markup_value = document.querySelector("#markup_value").textContent;
 		var monthly_value = document.querySelector("#monthly_value").textContent;
@@ -580,10 +579,10 @@ function effectiveRateTsys_2 () {
 		}
 	}
 }
-}
+
 	<!-- MONTHLY FEES TSYS -->
 function monthlyFeesTsys () {
-	if(document.getElementById("radio-cards-no").checked || document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked || document.getElementById('brands-radio-clover').checked || document.getElementById('types-radio-yes').checked || document.getElementById('req-radio-yes').checked || document.getElementById('pay-radio-yes').checked) {
+	if(document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked || document.getElementById('brands-radio-clover').checked || document.getElementById('types-radio-yes').checked || document.getElementById('req-radio-yes').checked || document.getElementById('pay-radio-yes').checked) {
 	document.querySelector('.tsys_fees').textContent = "N/A";
 	}
 	else {
@@ -684,7 +683,7 @@ function effectiveRateClearent () {
 	document.querySelector('.clearent_rate_new').textContent = "2.5%";
 	}
 	else{
-	if(document.getElementById("radio-cards-yes").checked) {
+
 		var debit_value = document.querySelector('input[name="debit-choice"]:checked').value;
 		var markup_value = document.querySelector("#clearent-markup").textContent;
 		var monthly_value = document.querySelector("#clearent-monthly").textContent;
@@ -714,10 +713,9 @@ function effectiveRateClearent () {
 }
 }
 }
-}
 		<!-- MONTHLY FEES CLEARENT -->
 function monthlyFeesClearent () {
-	if(document.getElementById('radio-cards-no').checked || document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked || document.getElementById('brands-radio-clover').checked) {
+	if(document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked || document.getElementById('brands-radio-clover').checked) {
 	document.querySelector('.clearent_fees').textContent = "N/A";
 	}
 	else {
@@ -812,7 +810,6 @@ function effectiveRatePaysafe_2 () {
 	document.querySelector('.safe_rate_new').textContent = "2.5%";
 	}
 	else{
-	if(document.getElementById("radio-cards-yes").checked) {
 		var debit_value = document.querySelector('input[name="debit-choice"]:checked').value;
 		var markup_value = document.querySelector("#safe-markup").textContent;
 		var monthly_value = document.querySelector("#safe-monthly").textContent;
@@ -840,10 +837,9 @@ function effectiveRatePaysafe_2 () {
 		}
 	}
 }
-}
 	<!-- MONTHLY FEES PAYSAFE -->
 function monthlyFeesPaysafe () {
-	if(document.getElementById('radio-cards-no').checked || (document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked) || ((document.getElementById('brands-radio-standart').checked || document.getElementById('brands-radio-vital').checked || document.getElementById('brands-radio-recommends').checked || document.getElementById('brands-radio-other').checked) && (document.getElementById('types-radio-yes').checked || document.getElementById('req-radio-yes').checked || document.getElementById('pay-radio-yes').checked))) {
+	if((document.getElementById('cash-discount-surcharge').checked || document.getElementById('tiered').checked) || ((document.getElementById('brands-radio-standart').checked || document.getElementById('brands-radio-vital').checked || document.getElementById('brands-radio-recommends').checked || document.getElementById('brands-radio-other').checked) && (document.getElementById('types-radio-yes').checked || document.getElementById('req-radio-yes').checked || document.getElementById('pay-radio-yes').checked))) {
 	document.querySelector('.safe_fees').textContent = "N/A";
 	}
 	else {
