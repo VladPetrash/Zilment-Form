@@ -2,7 +2,28 @@
 <html>
 <body>
 <script>
+<script>
+document.getElementById("phone").addEventListener("keypress", function (evt) {
+    if (evt.which < 48 || evt.which > 57)
+    {
+        evt.preventDefault();
+    }
+});
 
+ var input2= jQuery("#phone");
+     jQuery(input2).keydown(function (e) {
+        if(e.keyCode == 188){
+            e.preventDefault();
+        }
+     })
+
+$("#phone").on("keypress", function(evt) {
+  var keycode2 = evt.charCode || evt.keyCode;
+  if (keycode2 == 46) {
+    return false;
+  }
+});
+</script>
 
 // slider-arrow
 $(".prev").click(()=> {
